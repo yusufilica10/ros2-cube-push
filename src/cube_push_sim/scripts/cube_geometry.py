@@ -21,6 +21,29 @@ def project_top(center,yaw,k,camera_height=.5,camera_pitch=.95,camera_x=.18,plan
     up=math.sin(camera_pitch)*x+math.cos(camera_pitch)*z
     return np.stack([k[2]-k[0]*points[:,1]/depth,k[5]-k[4]*up/depth],axis=1)
 
+def bearing_candidates(bgr,k,camera_pitch=.95,min_area=25):
+    """Bearing-only hints, including clipped tops; never assign metric positions."""
+    if min(k[0],k[4])<=0:return []
+    hsv=cv2.cvtColor(bgr,cv2.COLOR_BGR2HSV);result=[]
+    for color,bands in {'red':[(0,10),(170,179)],'green':[(35,85)],'blue':[(95,135)]}.items():
+        mask=np.zeros(hsv.shape[:2],np.uint8)
+        for lo,hi in bands:mask|=cv2.inRange(hsv,(lo,100,170),(hi,255,255))
+        mask=cv2.morphologyEx(mask,cv2.MORPH_OPEN,np.ones((3,3),np.uint8))
+        contours,_=cv2.findContours(mask,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+        for contour in contours:
+            area=cv2.contourArea(contour)
+            if area<min_area:continue
+            x,y,w,h=cv2.boundingRect(contour)
+            if min(w,h)<4:continue
+            u=x+(w-1)/2;v=y+(h-1)/2
+            forward=math.cos(camera_pitch)-math.sin(camera_pitch)*(v-k[5])/k[4]
+            left=-(u-k[2])/k[0]
+            if forward<=0:continue
+            result.append({'color':color,'bearing_rad':math.atan2(left,forward),
+                           'bbox':[x,y,w,h],'area_px':float(area)})
+    return sorted(result,key=lambda d:-d['area_px'])
+
+
 def detect_cubes(bgr,k,camera_height=.5,min_area=25,camera_pitch=.95,camera_x=.18):
     if min(k[0],k[4],camera_height-.18)<=0:return []
     hsv=cv2.cvtColor(bgr,cv2.COLOR_BGR2HSV);detections=[]

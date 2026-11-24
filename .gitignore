@@ -11,3 +11,6 @@ __pycache__/
 .env.*
 *.pem
 *.key
+
+/.vendor/
+/.debug/

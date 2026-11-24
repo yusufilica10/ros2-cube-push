@@ -70,9 +70,9 @@ iddiası bağımsız fizik testiyle karşılaştırılmadan üç küp başarıl�
 ## Çalışma ve sürüş kalibrasyonu
 
 Nav2 bileşenleri ayrı executor kullanan tek bir component container içinde
-çalışır. Proje `env.sh` ile ROS domain 47 ve FastDDS UDPv4 kullanır.
-Yayın modu ASYNCHRONOUS seçilerek uygulama callback’lerinin ağ gönderiminde
-beklemesi azaltılır. BLAS/OpenMP tek iş parçacığıyla çalışır.
+çalışır. Proje `env.sh` ile ROS domain 47 ve Cyclone DDS kullanır. İletişim bu
+sanal makinenin loopback arayüzünde yapılır; multicast kullanılmaz.
+BLAS/OpenMP ve yazılımsal görüntüleme işçisi tek iş parçacığıyla çalışır.
 Teker görsel genişliği 25 mm, temas silindiri genişliği 2 mm; yarıçap 50 mm,
 merkezler arası mesafe 300 mm. İnce temas yüzeyi dönme sırasındaki odometri
 hatasını kalibrasyon ölçümünde yaklaşık %8.6’dan %0.4’e indirmiştir.
@@ -89,12 +89,36 @@ Gazebo 2 ms fizik adımıyla çalışır. Saat köprüsü ham `/simulation/clock
 verisini C++ `clock_throttle` düğümünde süzer ve `/clock` üzerinde simülasyon
 zamanına göre en fazla 50 Hz dağıtır. Zaman damgaları değiştirilmez; geriye
 sıfırlama ve ilk örnek hemen iletilir. Fizik adımı ve 480 saniyelik gerçek
-süre sınırı aynıdır. Teker eklem durumu 20 Hz, LiDAR ve RGB kamera 10 Hz’dir.
+süre sınırı aynıdır. Teker eklem durumu 20 Hz, LiDAR 10 Hz, RGB kamera 5 Hz’dir.
 
 Saat köprüsünün bağımsız entegrasyon testi:
 `python3 src/cube_push_sim/test/check_clock_throttle.py`.
 Test yalnızca `/test_clock/*` konularını kullanır; çalışan `/clock` akışını
 değiştirmez.
 
-Ayar kaynakları: [ROS Fast DDS yayın modu](https://github.com/ros2/rmw_fastrtps#change-publication-mode),
-[Gazebo JointStatePublisher](https://gazebosim.org/api/sim/10/classgz_1_1sim_1_1systems_1_1JointStatePublisher.html).
+Ayar kaynağı: [Gazebo JointStatePublisher](https://gazebosim.org/api/sim/10/classgz_1_1sim_1_1systems_1_1JointStatePublisher.html).
+
+## Görüntülü kullanım düzeltmeleri
+
+- Sensörler ekransız EGL sunucusunda, görüntüleyici ayrı küçük OGRE
+  penceresinde çalışır. Böylece sensör üretimi pencerenin çiziminden ayrılır.
+- Kamera aboneliği en güncel tek kareyi tutar. Duvar saatiyle çalışan 20 Hz
+  kuyruk kontrolü, poz TF’si ulaşmış en yeni kareyi seçer; eski kareler atılır.
+- Gövde odometrisi görüntünün çekildiği zamandan, AMCL’nin map–odom düzeltmesi
+  güncel dönüşümden alınır; düzeltme iki simülasyon saniyesinden eskiyse
+  harita konumu üretilmez.
+- Metrik ölçüm için kesilmemiş 18 cm üst yüzey şartı korunur. Kenarda görünen
+  renkli yüzey yalnızca dönüş yönü ipucu sağlar; konum uydurulmaz.
+- Kamera merkezleme kazancı 0.6, açısal sınır 0.15 rad/s. Arama tam tur atmaz.
+  Kararlılık harita konumu yerine üç ayrı görüntüdeki gövde konumuyla ölçülür.
+- Transfer, yeşilde (1.8, -0.55)’e; diğer renklerde önce (-0.9, 0)’a, ardından
+  (1.8, -0.55)’e gider. Aradaki gereksiz (0.6, 0) duruşu kaldırılmıştır.
+- Son itiş hedef merkezinden 4 cm uzaklığa zorlamaz. Küp yarım köşegeni ve
+  6 cm güvenlik payı kullanılarak tamamen içerideyse durur; geri çekildikten
+  sonra teslim dört yeni görüntüyle ayrıca doğrulanır.
+- Nav2 bond konusu her açılışta ayrılır; görev başlamadan önce navigasyon
+  ve kamera üç saniye kararlı olmalıdır. Görev sınırı hâlâ 480 gerçek saniyedir.
+
+Resmi DDS yapılandırması: https://cyclonedds.io/docs/cyclonedds/latest/config/config_file_reference.html
+Yerel, sudo gerektirmeyen kurulum: `bash tools/install_middleware_local.sh`.
+Sistem kurulumu alternatifi: `sudo apt install ros-lyrical-rmw-cyclonedds-cpp`.

@@ -1,0 +1,100 @@
+{"state": "WAITING_FOR_NAV2", "active_color": null, "elapsed_s": 0, "sim_elapsed_s": 0, "delivered": [], "failures": []}
+std_srvs.srv.Trigger_Response(success=True, message='Mission requested')
+{"state": "MISSION_STARTED", "active_color": null, "elapsed_s": 0.0, "sim_elapsed_s": 0.0, "delivered": [], "failures": []}
+{"state": "MISSION_STARTED", "active_color": "green", "elapsed_s": 0.2, "sim_elapsed_s": 0.2, "delivered": [], "failures": []}
+{"state": "NAVIGATE", "active_color": "green", "elapsed_s": 0.6, "sim_elapsed_s": 0.5, "delivered": [], "failures": []}
+{"state": "ACQUIRE", "active_color": "green", "elapsed_s": 22.9, "sim_elapsed_s": 20.8, "delivered": [], "failures": []}
+{"state": "NAVIGATE", "active_color": "green", "elapsed_s": 25.9, "sim_elapsed_s": 23.6, "delivered": [], "failures": []}
+{"state": "ACQUIRE", "active_color": "green", "elapsed_s": 41.5, "sim_elapsed_s": 37.7, "delivered": [], "failures": []}
+{"state": "PUSH", "active_color": "green", "elapsed_s": 43.0, "sim_elapsed_s": 39.0, "delivered": [], "failures": []}
+{"state": "PUSH_REACHED", "active_color": "green", "elapsed_s": 61.2, "sim_elapsed_s": 55.0, "delivered": [], "failures": []}
+{"state": "NAVIGATE", "active_color": "green", "elapsed_s": 65.1, "sim_elapsed_s": 58.4, "delivered": [], "failures": []}
+{"state": "ACQUIRE", "active_color": "green", "elapsed_s": 79.8, "sim_elapsed_s": 69.7, "delivered": [], "failures": []}
+{"state": "PUSH", "active_color": "green", "elapsed_s": 82.4, "sim_elapsed_s": 71.8, "delivered": [], "failures": []}
+{"state": "PUSH_REACHED", "active_color": "green", "elapsed_s": 88.7, "sim_elapsed_s": 77.0, "delivered": [], "failures": []}
+{"state": "VERIFY", "active_color": "green", "elapsed_s": 91.6, "sim_elapsed_s": 79.2, "delivered": [], "failures": []}
+{"state": "DELIVERED", "active_color": "green", "elapsed_s": 92.3, "sim_elapsed_s": 79.8, "delivered": ["green"], "failures": []}
+{"state": "NAVIGATE", "active_color": "green", "elapsed_s": 92.9, "sim_elapsed_s": 80.3, "delivered": ["green"], "failures": []}
+{"state": "NAVIGATE", "active_color": "blue", "elapsed_s": 128.0, "sim_elapsed_s": 106.1, "delivered": ["green"], "failures": []}
+{"state": "ACQUIRE", "active_color": "blue", "elapsed_s": 145.0, "sim_elapsed_s": 117.8, "delivered": ["green"], "failures": []}
+{"state": "NAVIGATE", "active_color": "blue", "elapsed_s": 148.1, "sim_elapsed_s": 120.1, "delivered": ["green"], "failures": []}
+{"state": "ACQUIRE", "active_color": "blue", "elapsed_s": 158.2, "sim_elapsed_s": 127.4, "delivered": ["green"], "failures": []}
+{"state": "PUSH", "active_color": "blue", "elapsed_s": 159.3, "sim_elapsed_s": 128.2, "delivered": ["green"], "failures": []}
+{"state": "PUSH_REACHED", "active_color": "blue", "elapsed_s": 168.7, "sim_elapsed_s": 134.8, "delivered": ["green"], "failures": []}
+{"state": "NAVIGATE", "active_color": "blue", "elapsed_s": 173.3, "sim_elapsed_s": 138.1, "delivered": ["green"], "failures": []}
+{"state": "ACQUIRE", "active_color": "blue", "elapsed_s": 192.9, "sim_elapsed_s": 151.6, "delivered": ["green"], "failures": []}
+{"state": "PUSH", "active_color": "blue", "elapsed_s": 195.0, "sim_elapsed_s": 153.0, "delivered": ["green"], "failures": []}
+{"state": "PUSH_REACHED", "active_color": "blue", "elapsed_s": 213.3, "sim_elapsed_s": 166.2, "delivered": ["green"], "failures": []}
+{"state": "NAVIGATE", "active_color": "blue", "elapsed_s": 217.8, "sim_elapsed_s": 169.4, "delivered": ["green"], "failures": []}
+{"state": "ACQUIRE", "active_color": "blue", "elapsed_s": 241.5, "sim_elapsed_s": 186.0, "delivered": ["green"], "failures": []}
+{"state": "PUSH", "active_color": "blue", "elapsed_s": 243.8, "sim_elapsed_s": 187.6, "delivered": ["green"], "failures": []}
+{"state": "PUSH_REACHED", "active_color": "blue", "elapsed_s": 250.4, "sim_elapsed_s": 192.6, "delivered": ["green"], "failures": []}
+{"state": "VERIFY", "active_color": "blue", "elapsed_s": 253.5, "sim_elapsed_s": 194.9, "delivered": ["green"], "failures": []}
+{"state": "DELIVERY_CONFIRMED", "active_color": "blue", "elapsed_s": 254.2, "sim_elapsed_s": 195.5, "delivered": ["green"], "failures": []}
+{"state": "DELIVERED", "active_color": "blue", "elapsed_s": 254.2, "sim_elapsed_s": 195.5, "delivered": ["green", "blue"], "failures": []}
+{"state": "NAVIGATE", "active_color": "blue", "elapsed_s": 254.8, "sim_elapsed_s": 195.9, "delivered": ["green", "blue"], "failures": []}
+{"state": "NAVIGATE", "active_color": "red", "elapsed_s": 283.5, "sim_elapsed_s": 217.0, "delivered": ["green", "blue"], "failures": []}
+{"state": "ACQUIRE", "active_color": "red", "elapsed_s": 314.2, "sim_elapsed_s": 239.3, "delivered": ["green", "blue"], "failures": []}
+{"state": "NAVIGATE", "active_color": "red", "elapsed_s": 318.1, "sim_elapsed_s": 242.1, "delivered": ["green", "blue"], "failures": []}
+{"state": "ACQUIRE", "active_color": "red", "elapsed_s": 325.4, "sim_elapsed_s": 247.8, "delivered": ["green", "blue"], "failures": []}
+{"state": "PUSH", "active_color": "red", "elapsed_s": 327.0, "sim_elapsed_s": 249.0, "delivered": ["green", "blue"], "failures": []}
+{"state": "PUSH_REACHED", "active_color": "red", "elapsed_s": 335.7, "sim_elapsed_s": 255.6, "delivered": ["green", "blue"], "failures": []}
+{"state": "NAVIGATE", "active_color": "red", "elapsed_s": 340.1, "sim_elapsed_s": 259.0, "delivered": ["green", "blue"], "failures": []}
+{"state": "ACQUIRE", "active_color": "red", "elapsed_s": 357.9, "sim_elapsed_s": 272.9, "delivered": ["green", "blue"], "failures": []}
+{"state": "PUSH", "active_color": "red", "elapsed_s": 359.5, "sim_elapsed_s": 274.0, "delivered": ["green", "blue"], "failures": []}
+{"state": "PUSH_REACHED", "active_color": "red", "elapsed_s": 378.9, "sim_elapsed_s": 287.2, "delivered": ["green", "blue"], "failures": []}
+{"state": "NAVIGATE", "active_color": "red", "elapsed_s": 383.5, "sim_elapsed_s": 290.5, "delivered": ["green", "blue"], "failures": []}
+{"state": "ACQUIRE", "active_color": "red", "elapsed_s": 403.7, "sim_elapsed_s": 305.1, "delivered": ["green", "blue"], "failures": []}
+{"state": "PUSH", "active_color": "red", "elapsed_s": 405.1, "sim_elapsed_s": 306.2, "delivered": ["green", "blue"], "failures": []}
+{"state": "PUSH_REACHED", "active_color": "red", "elapsed_s": 418.2, "sim_elapsed_s": 316.2, "delivered": ["green", "blue"], "failures": []}
+{"state": "VERIFY", "active_color": "red", "elapsed_s": 421.5, "sim_elapsed_s": 318.4, "delivered": ["green", "blue"], "failures": []}
+{"state": "DELIVERY_CONFIRMED", "active_color": "red", "elapsed_s": 422.3, "sim_elapsed_s": 319.1, "delivered": ["green", "blue"], "failures": []}
+{"state": "DELIVERED", "active_color": "red", "elapsed_s": 422.3, "sim_elapsed_s": 319.1, "delivered": ["green", "blue", "red"], "failures": []}
+{"state": "COMPLETE", "active_color": "red", "elapsed_s": 422.3, "sim_elapsed_s": 319.1, "delivered": ["green", "blue", "red"], "failures": []}
+{
+  "delivered_count": 3,
+  "cubes": {
+    "red": {
+      "delivered": true,
+      "center": {
+        "x": 2.317304791574189,
+        "y": 1.112745418515063,
+        "z": 0.08999997109737638
+      },
+      "orientation": {
+        "x": -1.0045263615536205e-07,
+        "y": 7.644236220440589e-08,
+        "z": -0.1437278650749771,
+        "w": 0.9896172496480512
+      }
+    },
+    "green": {
+      "delivered": true,
+      "center": {
+        "x": 2.3145717126432515,
+        "y": -0.02652070408246312,
+        "z": 0.08999984392754656
+      },
+      "orientation": {
+        "x": -5.900622267473203e-07,
+        "y": 3.8323350934668534e-07,
+        "z": -0.5793250184494436,
+        "w": 0.8150966341471768
+      }
+    },
+    "blue": {
+      "delivered": true,
+      "center": {
+        "x": 2.2526405558365266,
+        "y": -1.1079132449487008,
+        "z": 0.08999939645505492
+      },
+      "orientation": {
+        "x": 8.097774205039016e-07,
+        "y": 2.9576320922345146e-07,
+        "z": 0.3333502606579643,
+        "w": 0.9428030566976987
+      }
+    }
+  }
+}

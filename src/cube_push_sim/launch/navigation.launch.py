@@ -1,5 +1,6 @@
 """Saved-map navigation. Stop SLAM/teleop; reset simulation before using initial pose."""
 from pathlib import Path
+import uuid
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
@@ -13,6 +14,7 @@ def generate_launch_description():
     share = Path(get_package_share_directory('cube_push_sim'))
     params = ParameterFile(str(share / 'config/nav2.yaml'), allow_substs=True)
     nodes = []
+    bond_topic = "/cube_push/bond/run_" + uuid.uuid4().hex
     specifications = [
         ('nav2_map_server', 'map_server', 'map_server', [], {'yaml_filename': LaunchConfiguration('map')}),
         ('nav2_amcl', 'amcl', 'amcl', [], {}),
@@ -32,6 +34,7 @@ def generate_launch_description():
         'collision_monitor':'nav2_collision_monitor::CollisionMonitor'}
     components=[]
     for package, executable, name, remaps, extra in specifications:
+        remaps = [*remaps, ('bond', bond_topic)]
         components.append(ComposableNode(package=package,plugin=plugins[name],name=name,
                           parameters=[params,extra],remappings=remaps,
                           extra_arguments=[{'use_intra_process_comms':False}]))
@@ -48,6 +51,7 @@ def generate_launch_description():
             condition=IfCondition(LaunchConfiguration('composition'))),
         Node(package='cube_push_sim', executable='velocity_mux', parameters=[{'use_sim_time': True}], output='screen'),
         Node(package='nav2_lifecycle_manager', executable='lifecycle_manager', name='lifecycle_manager_navigation',
+             remappings=[('bond', bond_topic)],
              parameters=[{'use_sim_time': True, 'autostart': False, 'bond_timeout': 60.0,
                           'node_names': [s[2] for s in specifications]}], output='screen'),
         Node(package='cube_push_sim', executable='navigation_ready', parameters=[{'use_sim_time': True}], output='screen'),

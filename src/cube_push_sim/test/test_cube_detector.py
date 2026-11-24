@@ -5,8 +5,8 @@ sys.path.insert(0,str(Path(__file__).parents[1]/'scripts'))
 import unittest
 import cv2
 import numpy as np
-from cube_geometry import project_top,detect_cubes,detect_zones
-from mission import delivered_inside,wrap
+from cube_geometry import project_top,detect_cubes,detect_zones,bearing_candidates
+from mission import delivered_inside,wrap,Mission,zone_relative_error
 from evaluate_run import evaluate
 K=np.array([160.,0,160.,0,160.,120.,0,0,1.])
 
@@ -17,6 +17,61 @@ def image_of_cube(color,center=(.50,0),angle=.2):
     return image
 
 class DetectionTest(unittest.TestCase):
+    def test_clipped_cube_keeps_bearing_without_invented_position(self):
+        im=np.zeros((240,320,3),np.uint8)
+        cv2.rectangle(im,(285,85),(319,145),(0,255,0),-1)
+        hints=bearing_candidates(im,K)
+        self.assertEqual(detect_cubes(im,K),[])
+        self.assertEqual(len(hints),1)
+        self.assertEqual(hints[0]['color'],'green')
+        self.assertLess(hints[0]['bearing_rad'],0)
+        self.assertNotIn('position_base',hints[0])
+        self.assertNotIn('position_map',hints[0])
+    def test_pastel_target_is_not_a_search_hint(self):
+        im=np.zeros((240,320,3),np.uint8)
+        cv2.rectangle(im,(50,50),(250,200),(191,255,191),-1)
+        self.assertEqual(bearing_candidates(im,K),[])
+    def test_acquire_follows_edge_hint_and_ignores_map_correction(self):
+        from nav_msgs.msg import Odometry
+        class Feedback:
+            def __init__(self):
+                self.step=0;self.commands=[];self.odom=Odometry();self.odom.pose.pose.orientation.w=1.
+                self.observations={'green':{'data':{'position_map':{'x':1.,'y':1.}},'stamp':0.,'wall':__import__('time').monotonic()}}
+                self.visual_observations=self.observations
+                self.candidates={'green':{'data':{'bearing_rad':-.6},'wall':__import__('time').monotonic(),'stamp':0.}}
+            def get_logger(self):
+                from unittest.mock import Mock
+                return Mock()
+            def event(self,*a,**k):pass
+            def set_mode(self,*a):pass
+            def command(self,v=0.,w=0.):self.commands.append((v,w))
+            def pose(self):return 0.,0.,0.
+            def simtime(self):return self.step*.1
+            def spin(self,*a):
+                self.step+=1
+                if self.step>20:raise AssertionError('Camera acquisition did not converge')
+            def visual_cube(self,color):return self.cube(color)
+            def cube(self,color):
+                if self.step<3:return None
+                self.observations[color]['stamp']=self.step*.1
+                return self.step*.2,0.,{'bearing_rad':0.,'position_base':{'x':.5,'y':0.}}
+        f=Feedback();result=Mission.acquire(f,'green')
+        self.assertLess(next(w for v,w in f.commands if w),0.)
+        self.assertEqual(f.commands[-1],(0.,0.))
+        self.assertEqual(result[2]['position_base']['x'],.5)
+    def test_delivery_does_not_require_exact_target_center(self):
+        pair={'cube':{'position_base':{'x':.52,'y':.06}},
+              'zone':{'position_base':{'x':.6,'y':0.},'yaw_base':0.}}
+        relative=zone_relative_error(pair)
+        self.assertGreater(np.linalg.norm(relative),.04)
+        self.assertTrue(delivered_inside(relative,(0.,0.),margin=.06))
+        # A cube can protrude even if its center is within the zone boundary.
+        pair['cube']['position_base']['x']=.83
+        self.assertFalse(delivered_inside(zone_relative_error(pair),(0.,0.),margin=.06))
+    def test_zone_relative_error_respects_target_axes(self):
+        pair={'cube':{'position_base':{'x':.52,'y':.06}},
+              'zone':{'position_base':{'x':.6,'y':0.},'yaw_base':np.pi/2}}
+        np.testing.assert_allclose(zone_relative_error(pair),(.06,.08),atol=1e-6)
     def test_three_colors_with_metric_fit(self):
         for name,color in [('red',(0,0,255)),('green',(0,255,0)),('blue',(255,0,0))]:
             detections=detect_cubes(image_of_cube(color),K)

@@ -1,67 +1,76 @@
-# Autonomous mission validation — 2026-11-24
+# Görüntülü otonom görev doğrulaması — 24 Kasım 2026
 
-**PASS: 3/3 matching targets, 464.45 seconds wall time (7 min 44.45 s).**
+**BAŞARILI: 3/3 teslim, 422,31 gerçek saniye (7 dakika 2,31 saniye).**
 
-One full autonomous run (`full14`) completed without manual intervention after
-its mission timer started. Preparation is excluded; the unchanged deadline is
-480 seconds wall time. Remaining margin in this run: 15.55 seconds.
+`gui24` koşusunda Gazebo penceresi açık, RViz kapalıydı. Görev sayacı başladıktan
+sonra elle müdahale edilmedi. Süre sınırı değiştirilmedi: 480 gerçek saniye.
+Hazırlık süreye dahil değil; bu koşuda 57,69 saniye pay kaldı.
 
-## Independent physical check
+## Bağımsız fizik kontrolü
 
-`full_run_mission.json` records `COMPLETE`, green/blue/red delivered and no
-failures. `full_run_physical_check.json` independently checks all eight rotated
-corners of each 0.18 m cube against its matching 0.60 m target. It confirms:
+`full_run_mission.json`: COMPLETE, yeşil/mavi/kırmızı teslim, hata yok.
+`full_run_physical_check.json`: her küpün döndürülmüş sekiz köşesinin eşleşen
+0,60 m hedefin tamamen içinde olduğunu bağımsız olarak doğrular.
 
-| Cube | Final world center (m) | Fully inside target |
+| Küp | Son dünya merkezi (m) | Tamamen içeride |
 |---|---|---|
-| green | (2.4017, 0.0527) | Yes |
-| blue | (2.3290, -1.1832) | Yes |
-| red | (2.3452, 1.1765) | Yes |
+| green | (2.3146, -0.0265) | Evet |
+| blue | (2.2526, -1.1079) | Evet |
+| red | (2.3173, 1.1127) | Evet |
 
-The evaluator consumes Gazebo poses only after the autonomous test; mission
-control consumes camera detections, TF and odometry, never evaluator poses.
-The archived log and observer output are in `docs/runs/full14/`.
+Görev kontrolü Gazebo gerçek pozlarını okumaz. Bu pozlar yalnızca test sonundaki
+bağımsız değerlendirmede kullanılır. Tam günlükler `docs/runs/gui24/` içindedir.
 
-## Conditions and checks
+## Düzeltmeler ve koşullar
 
-- Ubuntu 26.04, ROS 2 Lyrical, Gazebo Jetty 10.5; 4 virtual CPUs, software rendering.
-- Headless simulation, RViz off; GUI performance was not timed in this run.
-- Original SLAM map `arena_check_20261122_153109.yaml`; fixed competition arena.
-- Order green, blue, red; outer cubes go directly to the left-side center line.
-- Normal push speed 0.25 m/s; slower approach and camera-relative final placement.
-- Fast DDS UDPv4, asynchronous publication; domain 47.
-- Physics timestep remains 2 ms. Joint states publish at 20 Hz; unmodified
-  Gazebo time stamps are distributed to ROS at up to 50 Hz by `clock_throttle`.
-- Package build passed; colcon reports 11 tests, zero errors/failures.
-- Clock relay integration check passed: rate limit, exact stamps, backward reset.
-- SDF validation and URDF-to-SDF conversion passed (sensor extension warnings).
+- ROS 2 Lyrical / Gazebo Jetty 10.5, dört sanal CPU, yazılımsal görüntüleme.
+- İletişim: Cyclone DDS, loopback, domain 47. Önceki Fast DDS koşularında köprü
+  yayın hatası, gecikme ve Nav2 bağlantı kopmaları gözlenmiştir.
+- Kamera 320×240, 5 Hz. En güncel, odometri TF’si ulaşmış kare seçilir;
+  kamera kuyruğu simülasyon saati yavaşlasa da duvar saatiyle boşaltılır.
+- Kamera araması sınırlı; kesilmiş renkli yüzey sadece yön ipucu verir.
+  Konum için 18 cm üst yüzey geometrisi şartı korunur.
+- Dönüş kontrolü gecikmeye göre yavaşlatıldı. Kararlılık, harita sıçraması yerine
+  gövde koordinatlarında üç ayrı görüntüyle kontrol edilir.
+- Gereksiz orta durak kaldırıldı; küpler iki geçitten doğrudan transfer edilir.
+- Tam merkezde 4 cm hassasiyet zorlanmaz. Tam içeride olma, yarım köşegen ve
+  6 cm güvenlik payıyla belirlenir; geri çekilince dört görüntüyle teyit edilir.
+- Sensör sunucusu ekransız; küçük OGRE görüntüleyicisi ayrı çalışır.
+- Fizik adımı 2 ms, eklemler 20 Hz, LiDAR 10 Hz, ROS saati en fazla 50 Hz.
+- Paket derlemesi, 15 birim kontrolü ve saat köprüsü entegrasyon kontrolü geçti.
 
-This is evidence of one passing full run, not a repeatability measurement.
-The previous full10 run delivered 2/3 before the deadline; its evidence is
-preserved under `docs/runs/full10/`. Full11/13 were communication/data-loss
-failures; full12 was interrupted for performance work and is not a full result.
+Bu, tek başarılı tam görüntülü koşunun kanıtıdır; tekrar başarı oranı ölçümü değildir.
+Eski `full14` koşusu ekransızdı: 464,45 saniye, 3/3. Kaydı
+`docs/runs/full14/` altında korunur. Başarısız ara teşhis denemeleri `.debug/`
+altında yerel olarak saklanır; yeni başarı iddiasının kanıtı değildir.
 
-## Reproduce
+## Yeniden çalıştırma
 
-From the workspace root, terminal 1:
+Her terminalde önce `source ./env.sh` çalıştırılmalıdır. Eski Fast DDS oturumuyla
+komut göndermeyin. Bağımlılıklar ve ayrıntılı komutlar README içindedir.
 
 ```bash
+cd ~/Desktop/ros2_ws
 source ./env.sh
-LIBGL_ALWAYS_SOFTWARE=1 EGL_PLATFORM=surfaceless ros2 launch cube_push_sim competition.launch.py headless:=true rviz:=false
+ros2 launch cube_push_sim competition.launch.py rviz:=false
 ```
 
-Terminal 2, after sourcing the same `env.sh`:
+Başka bir terminalde aynı ortamı yükleyip görevi başlatın:
 
 ```bash
+cd ~/Desktop/ros2_ws
+source ./env.sh
 ros2 service call /mission/start std_srvs/srv/Trigger '{}'
 ros2 topic echo /mission/status --field data --full-length
 ```
 
-After `COMPLETE`, run the independent evaluator while the simulator is still on:
+COMPLETE sonrası simülasyon açıkken bağımsız kontrol:
 
 ```bash
 ros2 run cube_push_sim evaluate_run --output /tmp/physical_delivery_check.json
 ```
 
-Reset the entire simulation between attempts. Do not use teleop, RViz goals or
-Gazebo pose editing during a timed autonomous run.
+Yeni koşu için simülasyonun tamamını kapatıp yeniden açın. Resmi görevde sayaç
+başladıktan sonra teleop, RViz hedefi, yazılım/poz değişikliği ve küp taşıma yoktur.
+Ders PDF’si gerçek/simülasyon saati ayrımını açıkça belirtmez; bu uygulama daha
+sıkı olan gerçek süre yorumuyla test edilmiştir. Hocadan ayrım ayrıca teyit edilebilir.

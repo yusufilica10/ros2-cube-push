@@ -2,7 +2,7 @@
 
 Sabit 6×4 m yarışma arenasında SLAM, AMCL/Nav2 ve RGB kamera tabanlı
 üç renkli küp itme uygulaması. **24 Kasım 2026 tarihli otonom testte 3/3 teslim,
-464,45 saniyede (7 dakika 44 saniye) bağımsız fizik kontrolüyle doğrulandı.**
+422,31 gerçek saniyede (7 dakika 2 saniye), Gazebo penceresi açıkken bağımsız fizik kontrolüyle doğrulandı.**
 
 ## Ortam
 
@@ -25,8 +25,22 @@ colcon build --symlink-install --packages-select cube_push_sim
 source ./env.sh
 ```
 
+Cyclone DDS gerekir. Bu makinede proje içine kuruldu. Yeni bilgisayarda:
+
+```bash
+sudo apt install ros-lyrical-rmw-cyclonedds-cpp
+```
+
+Sudo kullanmadan resmi paketleri çalışma alanına açmak için alternatif:
+
+```bash
+bash tools/install_middleware_local.sh
+```
+
+`env.sh` yerel kurulumu otomatik bulur; `.vendor/` Git deposuna girmez.
+
 Bu makinede gerekli paketler kurulu. Her yeni terminalde `source ./env.sh`
-çalıştırın; ROS 2, çalışma alanı ve proje iletişim ayarlarını (domain 47, UDPv4) yükler. Python çalıştırılabilirlerinde değişiklikten sonra yeniden derleyin;
+çalıştırın; ROS 2, çalışma alanı ve proje iletişim ayarlarını (domain 47, Cyclone DDS) yükler. Python çalıştırılabilirlerinde değişiklikten sonra yeniden derleyin;
 CMake RENAME ile kurulan dosyalar symlink-install'da da kopyalanabilir.
 
 ## Tek komutla hazırlık
@@ -44,7 +58,9 @@ fizik adımı ve sensör ölçüm sıklıkları korunur.
 
 Nav2, sensörler yayın yapmaya başladıktan sonra otomatik hazırlanır. Görev
 kendiliğinden başlamaz. RViz'de harita ve başlangıç konumunu kontrol edin.
-Sanal makinede yazılımsal görüntüleme gerekirse:
+Sensörler ayrı ekransız sunucuda, Gazebo görüntüleyicisi küçük OGRE penceresinde
+çalışır. Yazılımsal görüntüleme ve tek iş parçacığı ayarları otomatik uygulanır.
+Gerekirse aynı ayarı açıkça vermek için:
 
 ```bash
 LIBGL_ALWAYS_SOFTWARE=1 ros2 launch cube_push_sim competition.launch.py
@@ -84,8 +100,8 @@ ros2 topic echo /perception/cubes --once --field data --full-length
 
 320×240 RGB ve canlı CameraInfo kullanılır. Kamera üst yüzeyden konum hesaplar;
 kısmen kesilen, örtülen veya beklenen 18 cm kareye uymayan yüzeyleri reddeder.
-Koordinatlar görüntü zamanındaki TF ile haritaya çevrilir; TF yoksa map konumu
-null olur. Yöntem düz zemin, bilinen küp ölçüsü ve bu dünyanın aydınlatmasına
+Gövde dönüşümü görüntü zamanından, AMCL map–odom düzeltmesi güncel TF’den
+alınır; gerekli TF yoksa map konumu null olur. Yöntem düz zemin, bilinen küp ölçüsü ve bu dünyanın aydınlatmasına
 bağlıdır. Gazebo nesne pozları görev algoritmasına verilmez.
 
 ## Bileşenleri ayrı açma
@@ -131,7 +147,7 @@ veriyi okumaz. Sayaç yalnızca merkez konumuna bakmaz.
 
 Doğrulanmış kontroller: paket derlemesi, SDF/URDF dönüşümü, renk/üst yüzey
 geometrisi ve sınır testleri; kayıtlı haritada kısa Nav2 hedefi. Son tamamlanan üç küplük
-fizik testinde 3/3 teslim 464,45 saniyede doğrulandı (headless, RViz kapalı).
+fizik testinde 3/3 teslim 422,31 gerçek saniyede doğrulandı (Gazebo açık, RViz kapalı).
 Bu sonuç tek tam koşunun kanıtıdır. Güncel ayrıntılar ve bağımsız kontrol:
 `docs/VALIDATION.md`.
 Eski ön kamera örneği `docs/cube_detection_live.png`, kısa Nav2 action çıktısı
@@ -144,3 +160,6 @@ Eski ön kamera örneği `docs/cube_detection_live.png`, kısa Nav2 action çık
 - https://gazebosim.org/docs/jetty/ros_installation/
 - Kurulu nav2_bringup Lyrical nav2_params.yaml (Apache-2.0): Nav2 ayarlarının başlangıç kaynağı
 - https://github.com/ros-navigation/navigation2
+
+Güncel görüntülü sürüm yedeği: `artifacts/cube_push_sim_gui_20261124.zip`.
+Eski `cube_push_sim_20261124.zip`, önceki ekransız test sürümüdür.

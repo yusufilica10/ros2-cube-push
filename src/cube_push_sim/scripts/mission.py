@@ -33,6 +33,16 @@ def delivered_inside(center,target,margin=.025):
     limit=.30-.09*math.sqrt(2)-margin
     return abs(center[0]-target[0])<=limit and abs(center[1]-target[1])<=limit
 
+def zone_relative_error(pair):
+    c=pair['cube']['position_base'];z=pair['zone']['position_base'];theta=pair['zone']['yaw_base']
+    dx,dy=c['x']-z['x'],c['y']-z['y']
+    return (math.cos(theta)*dx+math.sin(theta)*dy,-math.sin(theta)*dx+math.cos(theta)*dy)
+
+def stable_cube_observations(observations,span=.05):
+    if len(observations)<3:return False
+    points=[c[2]['position_base'] for c in observations[-3:]]
+    return all(max(p[axis] for p in points)-min(p[axis] for p in points)<span for axis in ('x','y'))
+
 def arena_clearance(x,y):
     distances=[3-abs(x),2-abs(y)]
     for wx,ymin,ymax in [(-.35,-2.,-.55),(-.35,.55,2.),(.9,-2.,-1.),(.9,.2,2.)]:
@@ -63,7 +73,7 @@ class Mission(Node):
         self.nav_active=False
         self.create_subscription(Bool,'/lifecycle_manager_navigation/managed_nodes_activated',self.nav_state,QoSProfile(depth=1,durability=DurabilityPolicy.TRANSIENT_LOCAL))
         self.requested=bool(self.get_parameter('autostart').value);self.aborted=False;self.running=False
-        self.observations={};self.pairs={};self.odom=None;self.started=None;self.sim_started=None
+        self.observations={};self.visual_observations={};self.candidates={};self.pairs={};self.odom=None;self.started=None;self.sim_started=None
         self.state='READY';self.active=None;self.mode='nav';self.delivered=[];self.failures=[];self.events=[];self.last_camera_wall=0
         self.create_timer(1.,self.publish_status)
         self.get_logger().info('Ready: /mission/start and /mission/stop (std_srvs/Trigger)')
@@ -78,7 +88,10 @@ class Mission(Node):
     def observe(self,msg):
         data=json.loads(msg.data);self.last_camera_wall=time.monotonic()
         stamp=data['stamp']['sec']+data['stamp']['nanosec']*1e-9
+        for hint in reversed(data.get('candidates',[])):
+            self.candidates[hint['color']]={'data':hint,'wall':time.monotonic(),'stamp':stamp}
         for d in data['detections']:
+            self.visual_observations[d['color']]={'data':d,'wall':time.monotonic(),'stamp':stamp}
             if d.get('position_map') is not None:self.observations[d['color']]={'data':d,'wall':time.monotonic(),'stamp':stamp}
         for z in data.get('zones',[]):
             d=next((d for d in data['detections'] if d['color']==z['color']),None)
@@ -127,6 +140,11 @@ class Mission(Node):
         if item and self.simtime()-item['stamp']<max_age and time.monotonic()-item['wall']<4:
             d=item['data'];p=d['position_map'];return (p['x'],p['y'],d)
         return None
+    def visual_cube(self,color):
+        item=self.visual_observations.get(color)
+        if item and self.simtime()-item['stamp']<.8 and time.monotonic()-item['wall']<3:
+            d=item['data'];p=d['position_base'];return (p['x'],p['y'],d)
+        return None
     def pair(self,color):
         p=self.pairs.get(color)
         if p and self.simtime()-p['stamp']<.6 and time.monotonic()-p['wall']<3:return p
@@ -153,25 +171,52 @@ class Mission(Node):
         self.nav_handle=None;result=f.result()
         if result.status!=4:raise MissionFailure(f'Nav2 failed ({result.status}): {result.result.error_msg}')
     def acquire(self,color,timeout=16):
-        self.event('ACQUIRE');self.set_mode('push');start=time.monotonic();end=start+timeout;stable=[];last_stamp=None
+        self.event('ACQUIRE');self.set_mode('push');self.command()
+        end=time.monotonic()+timeout;stable=[];last_stamp=None;last_log=0.
+        if self.odom is None:raise MissionFailure('No odometry for bounded camera search')
+        origin=yaw_of(self.odom.pose.pose.orientation);direction=-1.;sweep=0
+        known=self.observations.get(color);pose=self.pose()
+        if known and pose:
+            p=known['data']['position_map']
+            direction=1. if wrap(math.atan2(p['y']-pose[1],p['x']-pose[0])-pose[2])>0 else -1.
+        # Search stays within 0.5 rad of the starting odometry heading.
+        offsets=[direction*.4,-direction*.4,0.]
         while time.monotonic()<end:
-            c=self.cube(color)
+            c=self.visual_cube(color)
+            now=time.monotonic()
+            if now-last_log>3:
+                item=self.observations.get(color)
+                self.get_logger().info(json.dumps({'phase':'acquire_feedback','metric_ready':c is not None,
+                    'stable_frames':len(stable),'image_age_sim':round(self.simtime()-item['stamp'],3) if item else None,
+                    'receipt_age_wall':round(now-item['wall'],3) if item else None,
+                    'bearing':c[2]['bearing_rad'] if c else None}))
+                last_log=now
             if c:
-                stamp=self.observations[color]['stamp']
+                stamp=self.visual_observations[color]['stamp']
                 if stamp!=last_stamp:stable.append(c);last_stamp=stamp
-                self.command(0.,clamp(1.5*c[2]['bearing_rad'],-.3,.3) if abs(c[2]['bearing_rad'])>.06 else 0.)
-                if len(stable)>=5 and abs(c[2]['bearing_rad'])<.08:
-                    recent=stable[-5:]
-                    if max(p[0] for p in recent)-min(p[0] for p in recent)<.05 and max(p[1] for p in recent)-min(p[1] for p in recent)<.05:
-                        self.command();return c
+                bearing=c[2]['bearing_rad']
+                self.command(0.,clamp(.6*bearing,-.15,.15) if abs(bearing)>.06 else 0.)
+                if abs(bearing)<.08 and stable_cube_observations(stable):
+                    self.command()
+                    mapped=self.cube(color)
+                    if mapped is not None:return mapped
             else:
-                known=self.observations.get(color);pose=self.pose()
-                if known and pose:
-                    p=known['data']['position_map'];angle=wrap(math.atan2(p['y']-pose[1],p['x']-pose[0])-pose[2])
-                    self.command(0.,clamp(1.5*angle,-.5,.5))
-                else:self.command(0.,.5)
+                relative=wrap(yaw_of(self.odom.pose.pose.orientation)-origin)
+                if abs(relative)>.65:break
+                hint=self.candidates.get(color)
+                if hint and self.simtime()-hint['stamp']<.5 and time.monotonic()-hint['wall']<1.:
+                    self.command(0.,clamp(.6*hint['data']['bearing_rad'],-.15,.15))
+                else:
+                    relative=wrap(yaw_of(self.odom.pose.pose.orientation)-origin)
+                    target=offsets[min(sweep,len(offsets)-1)]
+                    if abs(target-relative)<.06:
+                        sweep+=1
+                        if sweep>=len(offsets):break
+                        target=offsets[sweep]
+                    self.command(0.,clamp(1.5*(target-relative),-.30,.30))
             self.spin()
-        raise MissionFailure(f'No stable camera detection for {color}')
+        self.command()
+        raise MissionFailure(f'No stable camera detection for {color}; bounded search stopped')
     def backoff(self,distance=.22):
         self.set_mode('push');self.command();self.spin(.2)
         if self.odom is None:raise MissionFailure('No odometry for backing away')
@@ -228,11 +273,16 @@ class Mission(Node):
                 p=pair['cube']['position_map'];c=(p['x'],p['y'],pair['cube']);z=pair['zone']['position_map'];goal=(z['x'],z['y'])
             dx,dy=goal[0]-c[0],goal[1]-c[1];remaining=math.hypot(dx,dy)
             along=dx*unit[0]+dy*unit[1];cross=abs(dx*unit[1]-dy*unit[0])
-            reached=(remaining<.04 and pair is not None) if match_zone else (remaining<.06 or (along<.035 and cross<.08))
+            reached=(pair is not None and delivered_inside(zone_relative_error(pair),(0.,0.),margin=.06)) if match_zone else (remaining<.06 or (along<.035 and cross<.08))
             if reached:
                 self.command();self.event('PUSH_REACHED',cube=[round(c[0],3),round(c[1],3)]);self.backoff();return
-            desired=math.atan2(dy,dx);error=wrap(desired-pose[2]);bearing=c[2]['bearing_rad']
-            w=clamp(3.0*error+.5*bearing,-.5,.5)
+            # A lookahead beyond the target avoids spinning at a noisy center.
+            near_zone=match_zone and remaining<.30
+            lookahead=.30 if near_zone else 0.
+            desired=math.atan2(dy+lookahead*unit[1],dx+lookahead*unit[0])
+            error=wrap(desired-pose[2]);bearing=c[2]['bearing_rad']
+            turn_limit=.20 if near_zone else .5
+            w=clamp(3.0*error+.5*bearing,-turn_limit,turn_limit)
             speed=float(self.get_parameter('push_speed').value)
             if c[2]['range_m']>.40:speed=min(speed,.12)
             if match_zone and remaining<.30:
@@ -250,9 +300,7 @@ class Mission(Node):
         while time.monotonic()<end:
             pair=self.pair(color)
             if pair and pair['stamp']!=last:
-                last=pair['stamp'];c=pair['cube']['position_base'];z=pair['zone']['position_base'];theta=pair['zone']['yaw_base']
-                dx,dy=c['x']-z['x'],c['y']-z['y']
-                relative=(math.cos(theta)*dx+math.sin(theta)*dy,-math.sin(theta)*dx+math.cos(theta)*dy)
+                last=pair['stamp'];relative=zone_relative_error(pair)
                 valid=valid+1 if delivered_inside(relative,(0.,0.)) else 0
                 if valid>=4:
                     self.event('DELIVERY_CONFIRMED',relative_error_m=[round(v,4) for v in relative],frames=valid)
@@ -260,9 +308,13 @@ class Mission(Node):
             self.spin()
         raise MissionFailure('Camera could not confirm cube fully inside matching visible target')
     def ready(self):
-        self.event('WAITING_FOR_NAV2');end=time.monotonic()+90
+        self.event('WAITING_FOR_NAV2');end=time.monotonic()+120;stable_since=None
         while time.monotonic()<end:
-            if self.nav_active and self.nav.server_is_ready() and self.pose() and self.odom and self.last_camera_wall:return
+            healthy=self.nav_active and self.nav.server_is_ready() and self.pose() and self.odom and time.monotonic()-self.last_camera_wall<2.
+            if healthy:
+                stable_since=stable_since or time.monotonic()
+                if time.monotonic()-stable_since>=3.:return
+            else:stable_since=None
             self.spin()
         raise MissionFailure('Navigation, localization or camera not ready')
     def run(self):
@@ -276,7 +328,7 @@ class Mission(Node):
                     if color=='blue':self.goto(*self.world(-2.25,-.4),-math.pi/2)
                     self.goto(*self.world(-2.25,y),0.)
                     self.acquire(color)
-                    route=[(.60,0.),(1.8,-.55)] if color=='green' else [(-.9,0.),(.60,0.),(1.8,-.55)]
+                    route=[(1.8,-.55)] if color=='green' else [(-.9,0.),(1.8,-.55)]
                     for waypoint in route:self.push_to(color,self.world(*waypoint))
                     self.push_to(color,self.world(2.35,y),match_zone=True)
                     c=self.verify(color,self.world(2.35,y));self.delivered.append(color)

@@ -1,9 +1,10 @@
 from pathlib import Path
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, GroupAction, SetEnvironmentVariable, ExecuteProcess
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration, PythonExpression
+from launch.substitutions import LaunchConfiguration
+from launch.conditions import UnlessCondition
 from launch_ros.actions import Node
 
 
@@ -13,9 +14,18 @@ def generate_launch_description():
     headless = LaunchConfiguration('headless')
     return LaunchDescription([
         DeclareLaunchArgument('headless', default_value='false'),
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(str(gz_share / 'launch/gz_sim.launch.py')),
-            launch_arguments={'gz_args': [PythonExpression(["'-s --headless-rendering' if '", headless, "' == 'true' else ''"]), ' -r ', str(share / 'worlds/competition.sdf')]}.items()),
+        SetEnvironmentVariable('LP_NUM_THREADS', '1'),
+        # Keep sensor rendering offscreen even when the viewer is open.
+        GroupAction(actions=[
+            SetEnvironmentVariable('LIBGL_ALWAYS_SOFTWARE', '1'),
+            SetEnvironmentVariable('EGL_PLATFORM', 'surfaceless'),
+            IncludeLaunchDescription(
+                PythonLaunchDescriptionSource(str(gz_share / 'launch/gz_sim.launch.py')),
+                launch_arguments={'gz_args': ['-s --headless-rendering -r ', str(share / 'worlds/competition.sdf')]}.items()),
+        ]),
+        ExecuteProcess(cmd=['gz', 'sim', '-g', '--render-engine-gui', 'ogre', '--gui-config', str(share / 'config/gazebo_light.config')], output='screen',
+            additional_env={'LIBGL_ALWAYS_SOFTWARE':'1', 'EGL_PLATFORM':'x11'},
+            condition=UnlessCondition(headless)),
         Node(package='cube_push_sim', executable='clock_throttle', output='screen'),
         Node(package='robot_state_publisher', executable='robot_state_publisher',
              parameters=[{'use_sim_time': True, 'robot_description': (share / 'urdf/robot.urdf').read_text()}]),
