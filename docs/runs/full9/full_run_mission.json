@@ -1,0 +1,570 @@
+{
+  "state": "FAILED",
+  "delivered": [
+    "blue"
+  ],
+  "failures": [
+    {
+      "color": "green",
+      "reason": "Could not align behind the visually observed cube"
+    }
+  ],
+  "elapsed_s": 341.98,
+  "events": [
+    {
+      "state": "WAITING_FOR_NAV2",
+      "color": null,
+      "elapsed_s": 0
+    },
+    {
+      "state": "MISSION_STARTED",
+      "color": null,
+      "elapsed_s": 0.0
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 0.61,
+      "goal": [
+        0.15,
+        0.2,
+        0.0
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 6.59
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 8.93,
+      "goal": [
+        0.541,
+        -0.085,
+        0.818
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 14.9
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 16.91,
+      "destination": [
+        1.65,
+        1.1
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "blue",
+      "elapsed_s": 25.09,
+      "cube": [
+        1.629,
+        1.078
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 28.2,
+      "goal": [
+        1.258,
+        1.009,
+        0.193
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 35.92
+    },
+    {
+      "state": "REALIGN",
+      "color": "blue",
+      "elapsed_s": 38.32,
+      "attempt": 1,
+      "yaw_error": 0.911
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 41.93,
+      "goal": [
+        0.979,
+        0.484,
+        0.405
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 53.21,
+      "goal": [
+        1.328,
+        0.633,
+        0.405
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 59.35
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 60.58,
+      "destination": [
+        3.0,
+        1.35
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "blue",
+      "elapsed_s": 71.08,
+      "cube": [
+        2.964,
+        1.331
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 74.56,
+      "goal": [
+        2.666,
+        1.513,
+        -0.343
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 84.0
+    },
+    {
+      "state": "REALIGN",
+      "color": "blue",
+      "elapsed_s": 85.94,
+      "attempt": 1,
+      "yaw_error": 0.743
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 89.59,
+      "goal": [
+        2.57,
+        1.208,
+        -0.135
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 97.87
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 99.31,
+      "destination": [
+        4.1,
+        1.0
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "blue",
+      "elapsed_s": 107.32,
+      "cube": [
+        4.129,
+        1.001
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 110.52,
+      "goal": [
+        3.806,
+        1.628,
+        -0.986
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 123.05,
+      "goal": [
+        4.015,
+        1.311,
+        -0.986
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 129.8
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 131.69,
+      "destination": [
+        4.75,
+        0.2
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "blue",
+      "elapsed_s": 140.13,
+      "cube": [
+        4.739,
+        0.258
+      ]
+    },
+    {
+      "state": "VERIFY",
+      "color": "blue",
+      "elapsed_s": 142.48
+    },
+    {
+      "state": "DELIVERY_CONFIRMED",
+      "color": "blue",
+      "elapsed_s": 143.9,
+      "relative_error_m": [
+        -0.0002,
+        0.0312
+      ],
+      "frames": 4
+    },
+    {
+      "state": "DELIVERED",
+      "color": "blue",
+      "elapsed_s": 143.91,
+      "cube": [
+        4.755,
+        0.257
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 144.51,
+      "goal": [
+        4.0,
+        1.0,
+        3.142
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 155.35,
+      "goal": [
+        2.65,
+        1.4,
+        3.142
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 162.19,
+      "goal": [
+        1.4,
+        1.0,
+        3.142
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 169.74,
+      "goal": [
+        0.15,
+        1.4,
+        0.0
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "green",
+      "elapsed_s": 178.42
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 181.23,
+      "goal": [
+        0.085,
+        1.673,
+        -0.351
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 190.14,
+      "goal": [
+        0.441,
+        1.543,
+        -0.351
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "green",
+      "elapsed_s": 192.98
+    },
+    {
+      "state": "PUSH",
+      "color": "green",
+      "elapsed_s": 195.29,
+      "destination": [
+        1.65,
+        1.1
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "green",
+      "elapsed_s": 202.26,
+      "cube": [
+        1.65,
+        1.09
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 205.66,
+      "goal": [
+        0.969,
+        0.862,
+        0.236
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 216.82,
+      "goal": [
+        1.338,
+        0.951,
+        0.236
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "green",
+      "elapsed_s": 223.05
+    },
+    {
+      "state": "REALIGN",
+      "color": "green",
+      "elapsed_s": 225.04,
+      "attempt": 1,
+      "yaw_error": -0.309
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 228.63,
+      "goal": [
+        0.999,
+        1.012,
+        0.167
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 236.56,
+      "goal": [
+        1.374,
+        1.075,
+        0.167
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "green",
+      "elapsed_s": 239.6
+    },
+    {
+      "state": "PUSH",
+      "color": "green",
+      "elapsed_s": 241.19,
+      "destination": [
+        3.0,
+        1.35
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "green",
+      "elapsed_s": 250.63,
+      "cube": [
+        2.971,
+        1.341
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 254.08,
+      "goal": [
+        2.701,
+        1.511,
+        -0.35
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "green",
+      "elapsed_s": 259.52
+    },
+    {
+      "state": "REALIGN",
+      "color": "green",
+      "elapsed_s": 260.64,
+      "attempt": 1,
+      "yaw_error": 0.525
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 264.24,
+      "goal": [
+        2.319,
+        1.334,
+        -0.185
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 273.23,
+      "goal": [
+        2.693,
+        1.264,
+        -0.185
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "green",
+      "elapsed_s": 278.67
+    },
+    {
+      "state": "PUSH",
+      "color": "green",
+      "elapsed_s": 280.31,
+      "destination": [
+        4.1,
+        1.0
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "green",
+      "elapsed_s": 288.29,
+      "cube": [
+        4.069,
+        1.014
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 291.69,
+      "goal": [
+        3.881,
+        0.731,
+        0.656
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "green",
+      "elapsed_s": 301.9
+    },
+    {
+      "state": "REALIGN",
+      "color": "green",
+      "elapsed_s": 304.57,
+      "attempt": 1,
+      "yaw_error": -0.398
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 308.17,
+      "goal": [
+        3.821,
+        0.954,
+        0.448
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "green",
+      "elapsed_s": 317.64
+    },
+    {
+      "state": "REALIGN",
+      "color": "green",
+      "elapsed_s": 319.59,
+      "attempt": 2,
+      "yaw_error": -0.42
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 323.19,
+      "goal": [
+        3.454,
+        1.038,
+        0.272
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 331.12,
+      "goal": [
+        3.82,
+        1.141,
+        0.272
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "green",
+      "elapsed_s": 336.46
+    },
+    {
+      "state": "REALIGN",
+      "color": "green",
+      "elapsed_s": 338.97,
+      "attempt": 3,
+      "yaw_error": -0.603
+    },
+    {
+      "state": "FAILED",
+      "color": "green",
+      "elapsed_s": 341.98,
+      "reason": "Could not align behind the visually observed cube"
+    }
+  ]
+}

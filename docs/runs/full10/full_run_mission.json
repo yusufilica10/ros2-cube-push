@@ -1,0 +1,697 @@
+{
+  "state": "FAILED",
+  "delivered": [
+    "green",
+    "blue"
+  ],
+  "failures": [
+    {
+      "color": "red",
+      "reason": "480-second wall-time mission deadline reached"
+    }
+  ],
+  "elapsed_s": 480.01,
+  "events": [
+    {
+      "state": "WAITING_FOR_NAV2",
+      "color": null,
+      "elapsed_s": 0
+    },
+    {
+      "state": "MISSION_STARTED",
+      "color": null,
+      "elapsed_s": 0.0
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 0.63,
+      "goal": [
+        0.15,
+        1.4,
+        0.0
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "green",
+      "elapsed_s": 15.56
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 18.27,
+      "goal": [
+        0.033,
+        1.403,
+        -0.001
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 29.63,
+      "goal": [
+        0.233,
+        1.403,
+        -0.001
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "green",
+      "elapsed_s": 32.33
+    },
+    {
+      "state": "PUSH",
+      "color": "green",
+      "elapsed_s": 33.57,
+      "destination": [
+        3.0,
+        1.4
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "green",
+      "elapsed_s": 48.45,
+      "cube": [
+        2.986,
+        1.411
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 51.76,
+      "goal": [
+        2.542,
+        1.674,
+        -0.461
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "green",
+      "elapsed_s": 59.13
+    },
+    {
+      "state": "PUSH",
+      "color": "green",
+      "elapsed_s": 60.31,
+      "destination": [
+        4.2,
+        0.85
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "green",
+      "elapsed_s": 70.62,
+      "cube": [
+        4.186,
+        0.863
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 73.99,
+      "goal": [
+        3.892,
+        0.373,
+        0.875
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "green",
+      "elapsed_s": 83.32
+    },
+    {
+      "state": "PUSH",
+      "color": "green",
+      "elapsed_s": 85.29,
+      "destination": [
+        4.75,
+        1.4
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "green",
+      "elapsed_s": 96.22,
+      "cube": [
+        4.719,
+        1.425
+      ]
+    },
+    {
+      "state": "VERIFY",
+      "color": "green",
+      "elapsed_s": 98.61
+    },
+    {
+      "state": "DELIVERY_CONFIRMED",
+      "color": "green",
+      "elapsed_s": 99.27,
+      "relative_error_m": [
+        -0.0125,
+        -0.0033
+      ],
+      "frames": 4
+    },
+    {
+      "state": "DELIVERED",
+      "color": "green",
+      "elapsed_s": 99.27,
+      "cube": [
+        4.726,
+        1.429
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 99.88,
+      "goal": [
+        4.0,
+        1.0,
+        3.142
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 111.2,
+      "goal": [
+        2.65,
+        1.4,
+        3.142
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 118.49,
+      "goal": [
+        1.4,
+        1.0,
+        3.142
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 125.54,
+      "goal": [
+        0.15,
+        1.0,
+        -1.571
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 133.09,
+      "goal": [
+        0.15,
+        0.2,
+        0.0
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 138.75
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 141.45,
+      "goal": [
+        0.482,
+        -0.024,
+        0.597
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 148.46
+    },
+    {
+      "state": "REALIGN",
+      "color": "blue",
+      "elapsed_s": 149.78,
+      "attempt": 1,
+      "yaw_error": -0.441
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 153.38,
+      "goal": [
+        0.105,
+        0.048,
+        0.403
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 169.14,
+      "goal": [
+        0.289,
+        0.127,
+        0.403
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 173.86
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 175.1,
+      "destination": [
+        1.4,
+        0.6
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "blue",
+      "elapsed_s": 181.59,
+      "cube": [
+        1.408,
+        0.599
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 184.95,
+      "goal": [
+        1.475,
+        -0.114,
+        1.554
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 197.09,
+      "goal": [
+        1.479,
+        0.086,
+        1.554
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 204.03
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 206.6,
+      "destination": [
+        1.5,
+        1.4
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "blue",
+      "elapsed_s": 215.61,
+      "cube": [
+        1.483,
+        1.349
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 219.17,
+      "goal": [
+        0.715,
+        1.382,
+        0.008
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 236.2,
+      "goal": [
+        0.915,
+        1.383,
+        0.008
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 240.67
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 242.52,
+      "destination": [
+        3.0,
+        1.4
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "blue",
+      "elapsed_s": 256.05,
+      "cube": [
+        2.945,
+        1.4
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 259.42,
+      "goal": [
+        2.562,
+        1.673,
+        -0.466
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 265.95
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 267.49,
+      "destination": [
+        4.2,
+        0.85
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "blue",
+      "elapsed_s": 277.45,
+      "cube": [
+        4.172,
+        0.865
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 280.87,
+      "goal": [
+        3.828,
+        1.392,
+        -0.912
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 293.05,
+      "goal": [
+        3.95,
+        1.234,
+        -0.912
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 297.41
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 299.01,
+      "destination": [
+        4.75,
+        0.2
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "blue",
+      "elapsed_s": 310.44,
+      "cube": [
+        4.754,
+        0.252
+      ]
+    },
+    {
+      "state": "VERIFY",
+      "color": "blue",
+      "elapsed_s": 313.01
+    },
+    {
+      "state": "DELIVERY_CONFIRMED",
+      "color": "blue",
+      "elapsed_s": 313.84,
+      "relative_error_m": [
+        -0.0013,
+        0.0167
+      ],
+      "frames": 4
+    },
+    {
+      "state": "DELIVERED",
+      "color": "blue",
+      "elapsed_s": 313.84,
+      "cube": [
+        4.762,
+        0.248
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 314.45,
+      "goal": [
+        4.0,
+        1.0,
+        3.142
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 326.39,
+      "goal": [
+        2.65,
+        1.4,
+        3.142
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 334.67,
+      "goal": [
+        1.4,
+        1.0,
+        3.142
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "red",
+      "elapsed_s": 342.52,
+      "goal": [
+        0.15,
+        2.6,
+        0.0
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "red",
+      "elapsed_s": 356.43
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "red",
+      "elapsed_s": 358.74,
+      "goal": [
+        0.467,
+        2.826,
+        -0.591
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "red",
+      "elapsed_s": 366.98
+    },
+    {
+      "state": "REALIGN",
+      "color": "red",
+      "elapsed_s": 369.5,
+      "attempt": 1,
+      "yaw_error": 0.379
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "red",
+      "elapsed_s": 373.26,
+      "goal": [
+        0.08,
+        2.761,
+        -0.402
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "red",
+      "elapsed_s": 382.15,
+      "goal": [
+        0.264,
+        2.683,
+        -0.402
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "red",
+      "elapsed_s": 386.31
+    },
+    {
+      "state": "PUSH",
+      "color": "red",
+      "elapsed_s": 388.7,
+      "destination": [
+        1.4,
+        2.2
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "red",
+      "elapsed_s": 396.0,
+      "cube": [
+        1.346,
+        2.225
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "red",
+      "elapsed_s": 399.58,
+      "goal": [
+        1.385,
+        2.947,
+        -1.497
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "red",
+      "elapsed_s": 412.88,
+      "goal": [
+        1.4,
+        2.747,
+        -1.497
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "red",
+      "elapsed_s": 418.52
+    },
+    {
+      "state": "PUSH",
+      "color": "red",
+      "elapsed_s": 420.82,
+      "destination": [
+        1.5,
+        1.4
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "red",
+      "elapsed_s": 429.05,
+      "cube": [
+        1.503,
+        1.398
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "red",
+      "elapsed_s": 431.87
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "red",
+      "elapsed_s": 433.92,
+      "goal": [
+        0.748,
+        1.211,
+        0.084
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "red",
+      "elapsed_s": 456.85,
+      "goal": [
+        0.947,
+        1.227,
+        0.084
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "red",
+      "elapsed_s": 459.76
+    },
+    {
+      "state": "PUSH",
+      "color": "red",
+      "elapsed_s": 461.0,
+      "destination": [
+        3.0,
+        1.4
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "red",
+      "elapsed_s": 472.5,
+      "cube": [
+        3.004,
+        1.406
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "red",
+      "elapsed_s": 476.04,
+      "goal": [
+        2.602,
+        1.683,
+        -0.48
+      ]
+    },
+    {
+      "state": "FAILED",
+      "color": "red",
+      "elapsed_s": 480.0,
+      "reason": "480-second wall-time mission deadline reached"
+    }
+  ]
+}

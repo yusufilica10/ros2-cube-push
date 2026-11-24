@@ -1,0 +1,860 @@
+[INFO] [launch]: All log files can be found below /home/yusuf10y/.ros/log/2026-11-24-17-42-24-435125-yusuf10y-VirtualBox-8846
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gazebo-1]: process started with pid [8871]
+[INFO] [clock_throttle-2]: process started with pid [8872]
+[INFO] [robot_state_publisher-3]: process started with pid [8873]
+[INFO] [create-4]: process started with pid [8875]
+[INFO] [parameter_bridge-5]: process started with pid [8876]
+[INFO] [component_container_isolated-6]: process started with pid [8877]
+[INFO] [velocity_mux-7]: process started with pid [8878]
+[INFO] [lifecycle_manager-8]: process started with pid [8879]
+[INFO] [navigation_ready-9]: process started with pid [8882]
+[INFO] [cube_detector-10]: process started with pid [8885]
+[INFO] [mission-11]: process started with pid [8887]
+[component_container_isolated-6] [WARN] [1795531345.150845514] [component_container_isolated]: This executable is deprecated and will be removed in M-turtle.
+[component_container_isolated-6] Use 'component_container --executor-type single-threaded --isolated' instead.
+[component_container_isolated-6] For a multi-threaded isolated setup, use 'component_container --executor-type multi-threaded --isolated'.
+[robot_state_publisher-3] [INFO] [1795531345.261756186] [robot_state_publisher]: Robot initialized
+[lifecycle_manager-8] [INFO] [1795531345.262394417] [lifecycle_manager_navigation]: Creating
+[lifecycle_manager-8] [INFO] [1795531345.263116539] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle publishers[0m[0m
+[lifecycle_manager-8] [INFO] [1795531345.263668783] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[component_container_isolated-6] [INFO] [1795531345.623175384] [navigation_container]: Load Library: /opt/ros/lyrical/lib/libmap_server_core.so
+[component_container_isolated-6] [INFO] [1795531345.754008333] [navigation_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::CostmapFilterInfoServer>
+[component_container_isolated-6] [INFO] [1795531345.754270567] [navigation_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapSaver>
+[component_container_isolated-6] [INFO] [1795531345.754274688] [navigation_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapServer>
+[component_container_isolated-6] [INFO] [1795531345.754280994] [navigation_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_map_server::MapServer>
+[component_container_isolated-6] [INFO] [1795531345.794476413] [map_server]: 
+[component_container_isolated-6] 	map_server lifecycle node launched. 
+[component_container_isolated-6] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-6] [INFO] [1795531345.794559182] [map_server]: Creating
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/map_server' in container '/navigation_container'
+[component_container_isolated-6] [INFO] [1795531345.824958273] [navigation_container]: Load Library: /opt/ros/lyrical/lib/libamcl_core.so
+[component_container_isolated-6] [INFO] [1795531345.829940415] [navigation_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_amcl::AmclNode>
+[component_container_isolated-6] [INFO] [1795531345.830067332] [navigation_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_amcl::AmclNode>
+[component_container_isolated-6] [INFO] [1795531345.960076279] [amcl]: 
+[component_container_isolated-6] 	amcl lifecycle node launched. 
+[component_container_isolated-6] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-6] [INFO] [1795531345.963642774] [amcl]: Creating
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/amcl' in container '/navigation_container'
+[component_container_isolated-6] [INFO] [1795531345.989769509] [navigation_container]: Load Library: /opt/ros/lyrical/lib/libcontroller_server_core.so
+[component_container_isolated-6] [INFO] [1795531345.997457428] [navigation_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_controller::ControllerServer>
+[component_container_isolated-6] [INFO] [1795531345.997554070] [navigation_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_controller::ControllerServer>
+[component_container_isolated-6] [INFO] [1795531346.199107452] [controller_server]: 
+[component_container_isolated-6] 	controller_server lifecycle node launched. 
+[component_container_isolated-6] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-6] [INFO] [1795531346.212775200] [controller_server]: Creating controller server
+[component_container_isolated-6] [INFO] [1795531346.315660624] [local_costmap.local_costmap]: 
+[component_container_isolated-6] 	local_costmap lifecycle node launched. 
+[component_container_isolated-6] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-6] [INFO] [1795531346.316201120] [local_costmap.local_costmap]: Creating Costmap
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/controller_server' in container '/navigation_container'
+[component_container_isolated-6] [INFO] [1795531346.320380929] [navigation_container]: Load Library: /opt/ros/lyrical/lib/libplanner_server_core.so
+[component_container_isolated-6] [INFO] [1795531346.328869441] [navigation_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_planner::PlannerServer>
+[component_container_isolated-6] [INFO] [1795531346.329023382] [navigation_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_planner::PlannerServer>
+[component_container_isolated-6] [INFO] [1795531346.374370598] [planner_server]: 
+[component_container_isolated-6] 	planner_server lifecycle node launched. 
+[component_container_isolated-6] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-6] [INFO] [1795531346.376286265] [planner_server]: Creating
+[component_container_isolated-6] [INFO] [1795531346.430125446] [global_costmap.global_costmap]: 
+[component_container_isolated-6] 	global_costmap lifecycle node launched. 
+[component_container_isolated-6] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-6] [INFO] [1795531346.431431776] [global_costmap.global_costmap]: Creating Costmap
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/planner_server' in container '/navigation_container'
+[parameter_bridge-5] [INFO] [1795531346.435213296] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/clock (gz.msgs.Clock) -> /simulation/clock_raw (rosgraph_msgs/msg/Clock)] (Lazy 0)
+[component_container_isolated-6] [INFO] [1795531346.437821803] [navigation_container]: Load Library: /opt/ros/lyrical/lib/libsmoother_server_core.so
+[parameter_bridge-5] [INFO] [1795531346.441549671] [ros_gz_bridge]: Creating ROS->GZ Bridge: [/cmd_vel (geometry_msgs/msg/Twist) -> /cmd_vel (gz.msgs.Twist)] (Lazy 0)
+[component_container_isolated-6] [INFO] [1795531346.440072799] [navigation_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_smoother::SmootherServer>
+[component_container_isolated-6] [INFO] [1795531346.442685265] [navigation_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_smoother::SmootherServer>
+[parameter_bridge-5] [INFO] [1795531346.450035345] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/odom (gz.msgs.Odometry) -> /odom (nav_msgs/msg/Odometry)] (Lazy 0)
+[parameter_bridge-5] [INFO] [1795531346.455644547] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/tf (gz.msgs.Pose_V) -> /tf (tf2_msgs/msg/TFMessage)] (Lazy 0)
+[parameter_bridge-5] [INFO] [1795531346.460479023] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/joint_states (gz.msgs.Model) -> /joint_states (sensor_msgs/msg/JointState)] (Lazy 0)
+[parameter_bridge-5] [INFO] [1795531346.468310592] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/scan (gz.msgs.LaserScan) -> /scan (sensor_msgs/msg/LaserScan)] (Lazy 0)
+[parameter_bridge-5] [INFO] [1795531346.471763268] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/camera (gz.msgs.Image) -> /camera/image (sensor_msgs/msg/Image)] (Lazy 0)
+[parameter_bridge-5] [INFO] [1795531346.477960787] [ros_gz_bridge]: Creating GZ->ROS Bridge: [/camera_info (gz.msgs.CameraInfo) -> /camera/camera_info (sensor_msgs/msg/CameraInfo)] (Lazy 0)
+[component_container_isolated-6] [INFO] [1795531346.525086589] [smoother_server]: 
+[component_container_isolated-6] 	smoother_server lifecycle node launched. 
+[component_container_isolated-6] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-6] [INFO] [1795531346.526116930] [smoother_server]: Creating smoother server
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/smoother_server' in container '/navigation_container'
+[component_container_isolated-6] [INFO] [1795531346.549506088] [navigation_container]: Load Library: /opt/ros/lyrical/lib/libbehavior_server_core.so
+[component_container_isolated-6] [INFO] [1795531346.551541668] [navigation_container]: Found class: rclcpp_components::NodeFactoryTemplate<behavior_server::BehaviorServer>
+[component_container_isolated-6] [INFO] [1795531346.551941059] [navigation_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<behavior_server::BehaviorServer>
+[component_container_isolated-6] [INFO] [1795531346.639340556] [behavior_server]: 
+[component_container_isolated-6] 	behavior_server lifecycle node launched. 
+[component_container_isolated-6] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/behavior_server' in container '/navigation_container'
+[component_container_isolated-6] [INFO] [1795531346.654912086] [navigation_container]: Load Library: /opt/ros/lyrical/lib/libbt_navigator_core.so
+[component_container_isolated-6] [INFO] [1795531346.658274017] [navigation_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_bt_navigator::BtNavigator>
+[component_container_isolated-6] [INFO] [1795531346.658589312] [navigation_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_bt_navigator::BtNavigator>
+[component_container_isolated-6] [INFO] [1795531346.734905086] [bt_navigator]: 
+[component_container_isolated-6] 	bt_navigator lifecycle node launched. 
+[component_container_isolated-6] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[component_container_isolated-6] [INFO] [1795531346.740491410] [bt_navigator]: Creating
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/bt_navigator' in container '/navigation_container'
+[component_container_isolated-6] [INFO] [1795531346.753749618] [navigation_container]: Load Library: /opt/ros/lyrical/lib/libvelocity_smoother_core.so
+[component_container_isolated-6] [INFO] [1795531346.757060206] [navigation_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_velocity_smoother::VelocitySmoother>
+[component_container_isolated-6] [INFO] [1795531346.757205377] [navigation_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_velocity_smoother::VelocitySmoother>
+[cube_detector-10] [INFO] [1795531346.777821186] [cube_detector]: Cube detector ready: RGB -> /perception/cubes, /perception/debug_image
+[component_container_isolated-6] [INFO] [1795531346.832854534] [velocity_smoother]: 
+[component_container_isolated-6] 	velocity_smoother lifecycle node launched. 
+[component_container_isolated-6] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/velocity_smoother' in container '/navigation_container'
+[component_container_isolated-6] [INFO] [1795531346.838242234] [navigation_container]: Load Library: /opt/ros/lyrical/lib/libcollision_monitor_core.so
+[component_container_isolated-6] [INFO] [1795531346.841867176] [navigation_container]: Found class: rclcpp_components::NodeFactoryTemplate<nav2_collision_monitor::CollisionMonitor>
+[component_container_isolated-6] [INFO] [1795531346.843758676] [navigation_container]: Instantiate class: rclcpp_components::NodeFactoryTemplate<nav2_collision_monitor::CollisionMonitor>
+[component_container_isolated-6] [INFO] [1795531346.912957938] [collision_monitor]: 
+[component_container_isolated-6] 	collision_monitor lifecycle node launched. 
+[component_container_isolated-6] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [launch_ros.actions.load_composable_nodes]: Loaded node '/collision_monitor' in container '/navigation_container'
+[lifecycle_manager-8] [INFO] [1795531346.952750137] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service servers[0m[0m
+[mission-11] [INFO] [1795531347.024241044] [cube_mission]: Ready: /mission/start and /mission/stop (std_srvs/Trigger)
+[create-4] [INFO] [1795531348.066253297] [ros_gz_sim]: Entity creation successful.
+[gazebo-1] [1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="cube_pusher"]/link[@name="base_footprint"]/sensor[@name="camera"]/gz_frame_id:/home/yusuf10y/Desktop/ros2_ws/install/cube_push_sim/share/cube_push_sim/urdf/robot.urdf:L0]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[gazebo-1] [1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="cube_pusher"]/link[@name="base_footprint"]/sensor[@name="lidar"]/gz_frame_id:/home/yusuf10y/Desktop/ros2_ws/install/cube_push_sim/share/cube_push_sim/urdf/robot.urdf:L0]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[INFO] [create-4]: process has finished cleanly [pid 8875]
+[mission-11] [INFO] [1795531348.276104166] [cube_mission]: {"state": "WAITING_FOR_NAV2", "color": null, "elapsed_s": 0}
+[gazebo-1] libEGL warning: Not allowed to force software rendering when API explicitly selects a hardware device.
+[gazebo-1] libEGL warning: Not allowed to force software rendering when API explicitly selects a hardware device.
+[navigation_ready-9] [INFO] [1795531349.238447321] [navigation_ready_gate]: Sensors ready; starting Nav2 lifecycle nodes
+[lifecycle_manager-8] [INFO] [1795531349.242356451] [lifecycle_manager_navigation]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-8] [INFO] [1795531349.242446148] [lifecycle_manager_navigation]: [34m[1mConfiguring map_server[0m[0m
+[component_container_isolated-6] [INFO] [1795531349.243723563] [map_server]: Configuring
+[component_container_isolated-6] [INFO] [1795531349.243878663] [map_io]: Loading yaml file: /home/yusuf10y/Desktop/ros2_ws/install/cube_push_sim/share/cube_push_sim/maps/arena_check_20261122_153109.yaml
+[component_container_isolated-6] [INFO] [1795531349.244188236] [map_io]: resolution: 0.05
+[component_container_isolated-6] [INFO] [1795531349.244206658] [map_io]: origin[0]: -0.636
+[component_container_isolated-6] [INFO] [1795531349.244209911] [map_io]: origin[1]: -0.622
+[component_container_isolated-6] [INFO] [1795531349.244211964] [map_io]: origin[2]: 0
+[component_container_isolated-6] [INFO] [1795531349.244213932] [map_io]: free_thresh: 0.196
+[component_container_isolated-6] [INFO] [1795531349.244215727] [map_io]: occupied_thresh: 0.65
+[component_container_isolated-6] [INFO] [1795531349.244219297] [map_io]: mode: trinary
+[component_container_isolated-6] [INFO] [1795531349.244221943] [map_io]: negate: 0
+[component_container_isolated-6] [INFO] [1795531349.244598088] [map_io]: Loading image_file: /home/yusuf10y/Desktop/ros2_ws/install/cube_push_sim/share/cube_push_sim/maps/arena_check_20261122_153109.pgm
+[component_container_isolated-6] [INFO] [1795531349.245160218] [map_io]: Read map /home/yusuf10y/Desktop/ros2_ws/install/cube_push_sim/share/cube_push_sim/maps/arena_check_20261122_153109.pgm: 121 X 82 map @ 0.05 m/cell
+[lifecycle_manager-8] [INFO] [1795531349.297439645] [lifecycle_manager_navigation]: [34m[1mConfiguring amcl[0m[0m
+[component_container_isolated-6] [INFO] [1795531349.301185420] [amcl]: Configuring
+[component_container_isolated-6] [INFO] [1795531349.303006046] [amcl]: initTransforms
+[component_container_isolated-6] [INFO] [1795531349.322745798] [amcl]: initPubSub
+[component_container_isolated-6] [INFO] [1795531349.375497336] [amcl]: Subscribed to map topic.
+[lifecycle_manager-8] [INFO] [1795531349.433900657] [lifecycle_manager_navigation]: [34m[1mConfiguring controller_server[0m[0m
+[component_container_isolated-6] [INFO] [1795531349.435027848] [controller_server]: Configuring controller interface
+[component_container_isolated-6] [INFO] [1795531349.435257212] [local_costmap.local_costmap]: Configuring
+[component_container_isolated-6] [INFO] [1795531349.457259171] [local_costmap.local_costmap]: Using plugin "static_layer"
+[component_container_isolated-6] [INFO] [1795531349.460439551] [local_costmap.local_costmap]: Subscribing to the map topic (/map) with transient local durability
+[component_container_isolated-6] [INFO] [1795531349.468253521] [local_costmap.local_costmap]: Initialized plugin "static_layer"
+[component_container_isolated-6] [INFO] [1795531349.468293140] [local_costmap.local_costmap]: Using plugin "obstacle_layer"
+[component_container_isolated-6] [INFO] [1795531349.468395737] [local_costmap.local_costmap]: Subscribed to Topics: 
+[component_container_isolated-6] [INFO] [1795531349.468417849] [local_costmap.local_costmap]: Initialized plugin "obstacle_layer"
+[component_container_isolated-6] [INFO] [1795531349.468420148] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[component_container_isolated-6] [INFO] [1795531349.468462739] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[component_container_isolated-6] [INFO] [1795531349.730915878] [controller_server]: Controller frequency set to 10.0000Hz
+[component_container_isolated-6] [INFO] [1795531349.730966827] [controller_server]: getting progress checker plugins..
+[component_container_isolated-6] [INFO] [1795531349.730991530] [controller_server]: getting goal checker plugins..
+[component_container_isolated-6] [INFO] [1795531349.730999080] [controller_server]: getting controller plugins..
+[component_container_isolated-6] [INFO] [1795531349.731014004] [controller_server]: getting path handler plugins..
+[component_container_isolated-6] [INFO] [1795531349.731703761] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[component_container_isolated-6] [INFO] [1795531349.731739110] [controller_server]: Controller Server has progress_checker  progress checkers available.
+[component_container_isolated-6] [INFO] [1795531349.732162506] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[component_container_isolated-6] [INFO] [1795531349.732185143] [controller_server]: Controller Server has general_goal_checker  goal checkers available.
+[component_container_isolated-6] [INFO] [1795531349.732714407] [controller_server]: Created path handler : PathHandler of type nav2_controller::FeasiblePathHandler
+[component_container_isolated-6] [INFO] [1795531349.732730781] [controller_server]: Controller Server has PathHandler  path handlers available.
+[component_container_isolated-6] [INFO] [1795531349.733322141] [controller_server]: Created controller : FollowPath of type nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[component_container_isolated-6] [INFO] [1795531349.856486598] [controller_server]: Controller Server has FollowPath  controllers available.
+[lifecycle_manager-8] [INFO] [1795531350.093114483] [lifecycle_manager_navigation]: [34m[1mConfiguring planner_server[0m[0m
+[component_container_isolated-6] [INFO] [1795531350.101007033] [planner_server]: Configuring
+[component_container_isolated-6] [INFO] [1795531350.102408144] [global_costmap.global_costmap]: Configuring
+[component_container_isolated-6] [INFO] [1795531350.151330007] [global_costmap.global_costmap]: Using plugin "static_layer"
+[component_container_isolated-6] [INFO] [1795531350.151646903] [global_costmap.global_costmap]: Subscribing to the map topic (/map) with transient local durability
+[component_container_isolated-6] [INFO] [1795531350.175234463] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[component_container_isolated-6] [INFO] [1795531350.175480570] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[component_container_isolated-6] [INFO] [1795531350.175581339] [global_costmap.global_costmap]: Subscribed to Topics: 
+[component_container_isolated-6] [INFO] [1795531350.175594594] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[component_container_isolated-6] [INFO] [1795531350.175597469] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[component_container_isolated-6] [INFO] [1795531350.175635271] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[component_container_isolated-6] [INFO] [1795531350.425777641] [planner_server]: Created global planner plugin GridBased of type nav2_navfn_planner::NavfnPlanner
+[component_container_isolated-6] [INFO] [1795531350.425897777] [planner_server]: Configuring plugin GridBased of type NavfnPlanner
+[component_container_isolated-6] [INFO] [1795531350.427611723] [planner_server]: Planner Server has GridBased  planners available.
+[lifecycle_manager-8] [INFO] [1795531350.584361295] [lifecycle_manager_navigation]: [34m[1mConfiguring smoother_server[0m[0m
+[component_container_isolated-6] [INFO] [1795531350.587670337] [smoother_server]: Configuring smoother server
+[component_container_isolated-6] [INFO] [1795531350.638207187] [smoother_server]: Created smoother : simple_smoother of type nav2_smoother::SimpleSmoother
+[component_container_isolated-6] [INFO] [1795531350.638649671] [smoother_server]: Created smoother : route_smoother of type nav2_smoother::SimpleSmoother
+[component_container_isolated-6] [INFO] [1795531350.638712685] [smoother_server]: Smoother Server has simple_smoother route_smoother  smoothers available.
+[lifecycle_manager-8] [INFO] [1795531350.726431082] [lifecycle_manager_navigation]: [34m[1mConfiguring behavior_server[0m[0m
+[component_container_isolated-6] [INFO] [1795531350.728739679] [behavior_server]: Configuring
+[component_container_isolated-6] [INFO] [1795531350.755413555] [behavior_server]: Creating behavior plugin spin of type nav2_behaviors::Spin
+[component_container_isolated-6] [INFO] [1795531350.760656206] [behavior_server]: Creating behavior plugin backup of type nav2_behaviors::BackUp
+[component_container_isolated-6] [INFO] [1795531350.767364363] [behavior_server]: Creating behavior plugin drive_on_heading of type nav2_behaviors::DriveOnHeading
+[component_container_isolated-6] [INFO] [1795531350.769808207] [behavior_server]: Creating behavior plugin assisted_teleop of type nav2_behaviors::AssistedTeleop
+[component_container_isolated-6] [INFO] [1795531350.777734752] [behavior_server]: Creating behavior plugin wait of type nav2_behaviors::Wait
+[component_container_isolated-6] [INFO] [1795531350.808193678] [behavior_server]: Configuring spin
+[component_container_isolated-6] [INFO] [1795531350.872139776] [behavior_server]: Configuring backup
+[component_container_isolated-6] [INFO] [1795531350.934793109] [behavior_server]: Configuring drive_on_heading
+[component_container_isolated-6] [INFO] [1795531350.989729697] [behavior_server]: Configuring assisted_teleop
+[component_container_isolated-6] [INFO] [1795531351.058179704] [behavior_server]: Configuring wait
+[lifecycle_manager-8] [INFO] [1795531351.129085309] [lifecycle_manager_navigation]: [34m[1mConfiguring bt_navigator[0m[0m
+[component_container_isolated-6] [INFO] [1795531351.133475349] [bt_navigator]: Configuring
+[component_container_isolated-6] [INFO] [1795531351.145120739] [bt_navigator]: Creating navigator id navigate_to_pose of type nav2_bt_navigator::NavigateToPoseNavigator
+[component_container_isolated-6] [INFO] [1795531351.148672916] [bt_navigator]: Error_code parameters were set to: assisted_teleop backup compute_path dock_robot drive_on_heading follow_object follow_path nav_thru_poses nav_to_pose route spin smoother undock_robot wait
+[component_container_isolated-6] [INFO] [1795531351.225240306] [bt_navigator_navigate_to_pose_rclcpp_node]: 
+[component_container_isolated-6] 	bt_navigator_navigate_to_pose_rclcpp_node lifecycle node launched. 
+[component_container_isolated-6] 	Waiting on external lifecycle transitions to activate
+[component_container_isolated-6] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[lifecycle_manager-8] [INFO] [1795531351.406793347] [lifecycle_manager_navigation]: [34m[1mConfiguring velocity_smoother[0m[0m
+[component_container_isolated-6] [INFO] [1795531351.412655001] [velocity_smoother]: Configuring velocity smoother
+[lifecycle_manager-8] [INFO] [1795531351.433895401] [lifecycle_manager_navigation]: [34m[1mConfiguring collision_monitor[0m[0m
+[component_container_isolated-6] [INFO] [1795531351.435139529] [collision_monitor]: Configuring
+[component_container_isolated-6] [INFO] [1795531351.442120317] [collision_monitor]: [scan]: Creating Scan
+[component_container_isolated-6] [INFO] [1795531351.496004043] [collision_monitor]: [FootprintApproach]: Creating Polygon
+[component_container_isolated-6] [INFO] [1795531351.496148245] [collision_monitor]: [FootprintApproach]: Polygon points are not defined. Using dynamic subscription instead.
+[component_container_isolated-6] [INFO] [1795531351.496232080] [collision_monitor]: [FootprintApproach]: Making footprint subscriber on local_costmap/published_footprint topic
+[component_container_isolated-6] [INFO] [1795531351.555553437] [collision_monitor]: Collision monitor is enabled at startup.
+[lifecycle_manager-8] [INFO] [1795531351.577786905] [lifecycle_manager_navigation]: [34m[1mActivating map_server[0m[0m
+[component_container_isolated-6] [INFO] [1795531351.578959881] [map_server]: Activating
+[component_container_isolated-6] [INFO] [1795531351.579179629] [map_server]: Creating bond (map_server) to lifecycle manager.
+[component_container_isolated-6] [INFO] [1795531351.579825835] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 121 X 82 at 0.050000 m/pix
+[component_container_isolated-6] [WARN] [1795531351.579862720] [global_costmap.global_costmap]: StaticLayer: Costmap origin coordinates are not perfectly aligned with the resolution. This may cause misalignment aliasing between rolling and non-rolling costmaps.
+[component_container_isolated-6] Map origin: (-1, -1) | Resolution: 0
+[component_container_isolated-6] [INFO] [1795531351.580164194] [local_costmap.local_costmap]: StaticLayer: Resizing costmap to 121 X 82 at 0.050000 m/pix
+[component_container_isolated-6] [WARN] [1795531351.580198359] [local_costmap.local_costmap]: StaticLayer: Costmap origin coordinates are not perfectly aligned with the resolution. This may cause misalignment aliasing between rolling and non-rolling costmaps.
+[component_container_isolated-6] Map origin: (-1, -1) | Resolution: 0
+[component_container_isolated-6] [INFO] [1795531351.580241822] [amcl]: Received a 121 X 82 map @ 0.050 m/pix
+[lifecycle_manager-8] [INFO] [1795531351.864704158] [lifecycle_manager_navigation]: Server map_server connected with bond.
+[lifecycle_manager-8] [INFO] [1795531351.864782959] [lifecycle_manager_navigation]: [34m[1mActivating amcl[0m[0m
+[component_container_isolated-6] [INFO] [1795531351.865663058] [amcl]: Activating
+[component_container_isolated-6] [INFO] [1795531351.865730317] [amcl]: initialPoseReceived
+[component_container_isolated-6] [INFO] [1795531351.865823348] [amcl]: Setting pose (1.558000): 0.000 0.000 0.000
+[component_container_isolated-6] [INFO] [1795531351.866123597] [amcl]: Creating bond (amcl) to lifecycle manager.
+[component_container_isolated-6] [INFO] [1795531351.935098832] [amcl]: createLaserObject
+[lifecycle_manager-8] [INFO] [1795531352.133012431] [lifecycle_manager_navigation]: Server amcl connected with bond.
+[lifecycle_manager-8] [INFO] [1795531352.133234179] [lifecycle_manager_navigation]: [34m[1mActivating controller_server[0m[0m
+[component_container_isolated-6] [INFO] [1795531352.139966961] [controller_server]: Activating
+[component_container_isolated-6] [INFO] [1795531352.140147008] [local_costmap.local_costmap]: Activating
+[component_container_isolated-6] [INFO] [1795531352.140158599] [local_costmap.local_costmap]: Checking transform
+[component_container_isolated-6] [INFO] [1795531352.140447833] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Lookup would require extrapolation into the past.  Requested time 1.792000 but the earliest data is at time 2.600000, when looking up transform from frame [base_link] to frame [map]
+[component_container_isolated-6] [INFO] [1795531352.642478988] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Lookup would require extrapolation into the past.  Requested time 2.172000 but the earliest data is at time 2.600000, when looking up transform from frame [base_link] to frame [map]
+[component_container_isolated-6] [INFO] [1795531353.143525868] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Lookup would require extrapolation into the past.  Requested time 2.572000 but the earliest data is at time 2.600000, when looking up transform from frame [base_link] to frame [map]
+[component_container_isolated-6] [INFO] [1795531353.643741190] [local_costmap.local_costmap]: start
+[component_container_isolated-6] [INFO] [1795531353.694067013] [controller_server]: Activating controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[component_container_isolated-6] [INFO] [1795531353.695781024] [controller_server]: Creating bond (controller_server) to lifecycle manager.
+[lifecycle_manager-8] [INFO] [1795531353.960192623] [lifecycle_manager_navigation]: Server controller_server connected with bond.
+[lifecycle_manager-8] [INFO] [1795531353.960231815] [lifecycle_manager_navigation]: [34m[1mActivating planner_server[0m[0m
+[component_container_isolated-6] [INFO] [1795531353.960953957] [planner_server]: Activating
+[component_container_isolated-6] [INFO] [1795531353.961001526] [global_costmap.global_costmap]: Activating
+[component_container_isolated-6] [INFO] [1795531353.961007611] [global_costmap.global_costmap]: Checking transform
+[component_container_isolated-6] [INFO] [1795531353.961117293] [global_costmap.global_costmap]: start
+[component_container_isolated-6] [INFO] [1795531354.011848064] [planner_server]: Activating plugin GridBased of type NavfnPlanner
+[component_container_isolated-6] [INFO] [1795531354.019910129] [planner_server]: Creating bond (planner_server) to lifecycle manager.
+[lifecycle_manager-8] [INFO] [1795531354.297278119] [lifecycle_manager_navigation]: Server planner_server connected with bond.
+[lifecycle_manager-8] [INFO] [1795531354.297471507] [lifecycle_manager_navigation]: [34m[1mActivating smoother_server[0m[0m
+[component_container_isolated-6] [INFO] [1795531354.299836611] [smoother_server]: Activating
+[component_container_isolated-6] [INFO] [1795531354.299883249] [smoother_server]: Creating bond (smoother_server) to lifecycle manager.
+[lifecycle_manager-8] [INFO] [1795531354.560499162] [lifecycle_manager_navigation]: Server smoother_server connected with bond.
+[lifecycle_manager-8] [INFO] [1795531354.560564000] [lifecycle_manager_navigation]: [34m[1mActivating behavior_server[0m[0m
+[component_container_isolated-6] [INFO] [1795531354.561100617] [behavior_server]: Activating
+[component_container_isolated-6] [INFO] [1795531354.561240237] [behavior_server]: Activating spin
+[component_container_isolated-6] [INFO] [1795531354.561255227] [behavior_server]: Activating backup
+[component_container_isolated-6] [INFO] [1795531354.561261769] [behavior_server]: Activating drive_on_heading
+[component_container_isolated-6] [INFO] [1795531354.561268405] [behavior_server]: Activating assisted_teleop
+[component_container_isolated-6] [INFO] [1795531354.561274897] [behavior_server]: Activating wait
+[component_container_isolated-6] [INFO] [1795531354.561281089] [behavior_server]: Creating bond (behavior_server) to lifecycle manager.
+[lifecycle_manager-8] [INFO] [1795531354.838179762] [lifecycle_manager_navigation]: Server behavior_server connected with bond.
+[lifecycle_manager-8] [INFO] [1795531354.838255675] [lifecycle_manager_navigation]: [34m[1mActivating bt_navigator[0m[0m
+[component_container_isolated-6] [INFO] [1795531354.843952116] [bt_navigator]: Activating
+[component_container_isolated-6] [INFO] [1795531354.900159098] [bt_navigator]: Created BT from ID: CubeNavigate
+[component_container_isolated-6] [INFO] [1795531354.903430472] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[lifecycle_manager-8] [INFO] [1795531355.171601691] [lifecycle_manager_navigation]: Server bt_navigator connected with bond.
+[lifecycle_manager-8] [INFO] [1795531355.171664815] [lifecycle_manager_navigation]: [34m[1mActivating velocity_smoother[0m[0m
+[component_container_isolated-6] [INFO] [1795531355.173047297] [velocity_smoother]: Activating
+[component_container_isolated-6] [INFO] [1795531355.173113306] [velocity_smoother]: Creating bond (velocity_smoother) to lifecycle manager.
+[lifecycle_manager-8] [INFO] [1795531355.438557842] [lifecycle_manager_navigation]: Server velocity_smoother connected with bond.
+[lifecycle_manager-8] [INFO] [1795531355.438625555] [lifecycle_manager_navigation]: [34m[1mActivating collision_monitor[0m[0m
+[component_container_isolated-6] [INFO] [1795531355.439792347] [collision_monitor]: Activating
+[component_container_isolated-6] [INFO] [1795531355.439892652] [collision_monitor]: Creating bond (collision_monitor) to lifecycle manager.
+[parameter_bridge-5] [INFO] [1795531355.521063603] [ros_gz_bridge]: Passing message from ROS geometry_msgs/msg/Twist to Gazebo gz.msgs.Twist (showing msg only once per type)
+[lifecycle_manager-8] [INFO] [1795531355.702081788] [lifecycle_manager_navigation]: Server collision_monitor connected with bond.
+[lifecycle_manager-8] [INFO] [1795531355.702179292] [lifecycle_manager_navigation]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-8] [INFO] [1795531355.702198715] [lifecycle_manager_navigation]: [34m[1mCreating bond timer...[0m[0m
+[navigation_ready-9] [INFO] [1795531355.705791837] [navigation_ready_gate]: Nav2 startup complete
+[mission-11] [INFO] [1795531355.735499344] [cube_mission]: {"state": "MISSION_STARTED", "color": null, "elapsed_s": 0.0}
+[component_container_isolated-6] [INFO] [1795531355.750218717] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531355.750287725] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531355.838166354] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531355.838295880] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[INFO] [navigation_ready-9]: process has finished cleanly [pid 8882]
+[mission-11] [INFO] [1795531356.392686439] [cube_mission]: {"state": "NAVIGATE", "color": "green", "elapsed_s": 0.66, "goal": [0.15, 1.4, 0.0]}
+[component_container_isolated-6] [INFO] [1795531356.394059334] [bt_navigator]: Begin navigating from current location (-0.00, -0.00) to (0.15, 1.40)
+[component_container_isolated-6] [INFO] [1795531356.395462496] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [WARN] [1795531356.529292591] [controller_server]: No goal checker was specified in parameter 'current_goal_checker'. Server will use only plugin loaded general_goal_checker . This warning will appear once.
+[component_container_isolated-6] [WARN] [1795531356.529343008] [controller_server]: No progress checker was specified in parameter 'current_progress_checker'. Server will use only plugin loaded progress_checker . This warning will appear once.
+[component_container_isolated-6] [WARN] [1795531356.529351108] [controller_server]: No path handler was specified in parameter 'current_path_handler'. Server will use only plugin loaded PathHandler . This warning will appear once.
+[component_container_isolated-6] [INFO] [1795531356.529656237] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531358.606120786] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531358.710154863] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531360.678437814] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531360.787305371] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531362.753557150] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531362.771866028] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531364.768529200] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531364.881659914] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531366.795616518] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531367.024115514] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531368.928024603] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531369.146143650] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531370.389004273] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531370.638724606] [bt_navigator]: Goal succeeded
+[mission-11] [INFO] [1795531370.679832911] [cube_mission]: {"state": "ACQUIRE", "color": "green", "elapsed_s": 14.94}
+[component_container_isolated-6] [INFO] [1795531372.120614011] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531372.120723466] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531372.170500488] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531372.170729118] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531372.722781713] [cube_mission]: {"state": "NAVIGATE", "color": "green", "elapsed_s": 16.99, "goal": [0.23, 1.404, -0.001]}
+[component_container_isolated-6] [INFO] [1795531372.724045011] [bt_navigator]: Begin navigating from current location (0.14, 1.37) to (0.23, 1.40)
+[component_container_isolated-6] [INFO] [1795531372.725592478] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531372.939678463] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531375.009587885] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531375.330643590] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531377.293744170] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531377.294596534] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531377.397748042] [bt_navigator]: Goal succeeded
+[mission-11] [INFO] [1795531377.465068879] [cube_mission]: {"state": "ACQUIRE", "color": "green", "elapsed_s": 21.73}
+[mission-11] [INFO] [1795531385.172322881] [cube_mission]: {"state": "PUSH", "color": "green", "elapsed_s": 29.44, "destination": [3.0, 1.4]}
+[mission-11] [INFO] [1795531385.174633093] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [0.808, 1.395], "remaining": 2.192, "yaw_error": -0.063, "bearing": 0.005, "velocity": [0.12, -0.188]}
+[mission-11] [INFO] [1795531387.181586756] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [0.81, 1.392], "remaining": 2.19, "yaw_error": -0.001, "bearing": 0.011, "velocity": [0.12, 0.003]}
+[mission-11] [INFO] [1795531389.188661155] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [0.811, 1.394], "remaining": 2.189, "yaw_error": -0.003, "bearing": 0.019, "velocity": [0.25, -0.0]}
+[mission-11] [INFO] [1795531391.236729885] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [1.039, 1.396], "remaining": 1.961, "yaw_error": -0.003, "bearing": 0.024, "velocity": [0.25, 0.003]}
+[mission-11] [INFO] [1795531393.250618742] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [1.384, 1.399], "remaining": 1.616, "yaw_error": -0.006, "bearing": 0.022, "velocity": [0.25, -0.008]}
+[mission-11] [INFO] [1795531395.262262617] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [1.767, 1.406], "remaining": 1.233, "yaw_error": -0.005, "bearing": 0.032, "velocity": [0.25, 0.0]}
+[mission-11] [INFO] [1795531397.433853488] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [2.237, 1.411], "remaining": 0.763, "yaw_error": -0.01, "bearing": 0.051, "velocity": [0.25, -0.005]}
+[mission-11] [INFO] [1795531399.477825271] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [2.552, 1.415], "remaining": 0.448, "yaw_error": -0.024, "bearing": 0.066, "velocity": [0.25, -0.039]}
+[mission-11] [INFO] [1795531401.445688944] [cube_mission]: {"state": "PUSH_REACHED", "color": "green", "elapsed_s": 45.71, "cube": [2.997, 1.4]}
+[component_container_isolated-6] [INFO] [1795531404.745004469] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531404.745149729] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531404.794766462] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531404.794955872] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531405.347792906] [cube_mission]: {"state": "NAVIGATE", "color": "green", "elapsed_s": 49.61, "goal": [2.602, 1.622, -0.45]}
+[component_container_isolated-6] [INFO] [1795531405.351592492] [bt_navigator]: Begin navigating from current location (2.49, 1.42) to (2.60, 1.62)
+[component_container_isolated-6] [INFO] [1795531405.356609830] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531405.612330405] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531405.828809535] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531407.638054309] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531407.837978612] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531409.779181081] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531409.996806627] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531411.904823777] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531412.116288292] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531412.430950787] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531412.541222956] [bt_navigator]: Goal succeeded
+[mission-11] [INFO] [1795531412.547671117] [cube_mission]: {"state": "ACQUIRE", "color": "green", "elapsed_s": 56.81}
+[mission-11] [INFO] [1795531414.828844528] [cube_mission]: {"state": "PUSH", "color": "green", "elapsed_s": 59.09, "destination": [4.2, 0.85]}
+[mission-11] [INFO] [1795531414.830761677] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [3.124, 1.369], "remaining": 1.195, "yaw_error": -0.125, "bearing": 0.052, "velocity": [0.12, -0.35]}
+[mission-11] [INFO] [1795531416.943499325] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [3.131, 1.361], "remaining": 1.185, "yaw_error": 0.01, "bearing": 0.055, "velocity": [0.12, 0.059]}
+[mission-11] [INFO] [1795531420.945060712] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [3.13, 1.366], "remaining": 1.188, "yaw_error": -0.01, "bearing": 0.047, "velocity": [0.25, -0.007]}
+[mission-11] [INFO] [1795531422.995891568] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [3.324, 1.298], "remaining": 0.984, "yaw_error": -0.029, "bearing": 0.123, "velocity": [0.25, -0.024]}
+[mission-11] [INFO] [1795531425.019322280] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [3.794, 1.06], "remaining": 0.457, "yaw_error": -0.019, "bearing": 0.123, "velocity": [0.25, 0.004]}
+[mission-11] [INFO] [1795531427.046998890] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [4.061, 0.924], "remaining": 0.157, "yaw_error": -0.023, "bearing": 0.123, "velocity": [0.25, -0.008]}
+[mission-11] [INFO] [1795531427.459593081] [cube_mission]: {"state": "PUSH_REACHED", "color": "green", "elapsed_s": 71.72, "cube": [4.184, 0.858]}
+[component_container_isolated-6] [INFO] [1795531430.833026364] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531430.833096193] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531430.878859607] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531430.879344512] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531431.431108645] [cube_mission]: {"state": "NAVIGATE", "color": "green", "elapsed_s": 75.7, "goal": [3.869, 0.149, 0.957]}
+[component_container_isolated-6] [INFO] [1795531431.434897921] [bt_navigator]: Begin navigating from current location (3.75, 1.03) to (3.87, 0.15)
+[component_container_isolated-6] [INFO] [1795531431.435776344] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531431.539338205] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531433.660761420] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531433.874236107] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531435.817931509] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531435.930633784] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531437.943135046] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531438.055189589] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531440.018216665] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531440.299565025] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531442.211863383] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531442.531958520] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531443.951291786] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531444.056586281] [bt_navigator]: Goal succeeded
+[component_container_isolated-6] [INFO] [1795531444.147597842] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531444.147876020] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531444.170821795] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531444.171016568] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531444.724665604] [cube_mission]: {"state": "NAVIGATE", "color": "green", "elapsed_s": 88.99, "goal": [3.984, 0.313, 0.957]}
+[component_container_isolated-6] [INFO] [1795531444.731818334] [bt_navigator]: Begin navigating from current location (3.86, 0.19) to (3.98, 0.31)
+[component_container_isolated-6] [INFO] [1795531444.732901352] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531444.818317378] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531446.892449523] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531447.216600559] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531449.241529560] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531449.458731975] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531450.769785234] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531450.975962535] [bt_navigator]: Goal succeeded
+[mission-11] [INFO] [1795531451.019703108] [cube_mission]: {"state": "ACQUIRE", "color": "green", "elapsed_s": 95.28}
+[mission-11] [INFO] [1795531452.922876412] [cube_mission]: {"state": "PUSH", "color": "green", "elapsed_s": 97.19, "destination": [4.75, 1.4]}
+[mission-11] [INFO] [1795531452.924428671] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [4.322, 0.785], "remaining": 0.749, "yaw_error": 0.034, "bearing": 0.026, "velocity": [0.12, 0.115]}
+[mission-11] [INFO] [1795531454.949212812] [cube_mission]: {"phase": "push_feedback", "target_source": "camera_zone", "cube": [4.319, 0.784], "remaining": 0.786, "yaw_error": 0.026, "bearing": 0.013, "velocity": [0.12, 0.084]}
+[mission-11] [INFO] [1795531457.066193461] [cube_mission]: {"phase": "push_feedback", "target_source": "camera_zone", "cube": [4.418, 1.0], "remaining": 0.543, "yaw_error": -0.049, "bearing": 0.123, "velocity": [0.25, -0.086]}
+[mission-11] [INFO] [1795531459.105927361] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [4.551, 1.146], "remaining": 0.323, "yaw_error": -0.061, "bearing": 0.123, "velocity": [0.25, -0.12]}
+[mission-11] [INFO] [1795531461.626986704] [cube_mission]: {"state": "PUSH_REACHED", "color": "green", "elapsed_s": 105.89, "cube": [4.713, 1.41]}
+[mission-11] [INFO] [1795531464.086404908] [cube_mission]: {"state": "VERIFY", "color": "green", "elapsed_s": 108.35}
+[mission-11] [INFO] [1795531464.926051445] [cube_mission]: {"state": "DELIVERY_CONFIRMED", "color": "green", "elapsed_s": 109.19, "relative_error_m": [-0.0249, -0.0201], "frames": 4}
+[mission-11] [INFO] [1795531464.926794154] [cube_mission]: {"state": "DELIVERED", "color": "green", "elapsed_s": 109.19, "cube": [4.72, 1.414]}
+[component_container_isolated-6] [INFO] [1795531464.929142961] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531464.929202099] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531464.980860434] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531464.981067730] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531465.533258539] [cube_mission]: {"state": "NAVIGATE", "color": "green", "elapsed_s": 109.8, "goal": [4.0, 1.0, 3.142]}
+[component_container_isolated-6] [INFO] [1795531465.539749821] [bt_navigator]: Begin navigating from current location (4.42, 0.90) to (4.00, 1.00)
+[component_container_isolated-6] [INFO] [1795531465.540420153] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531465.770541876] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531467.773867264] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531468.047219576] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531470.052020935] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531470.166850045] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531472.074566796] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531472.421195625] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531474.345680186] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531474.450141315] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531476.426513271] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531476.627252400] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531478.177052610] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531478.338116900] [bt_navigator]: Goal succeeded
+[component_container_isolated-6] [INFO] [1795531478.359651373] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531478.359687317] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531478.410543295] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531478.410643757] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531478.961979241] [cube_mission]: {"state": "NAVIGATE", "color": "green", "elapsed_s": 123.23, "goal": [2.65, 1.4, 3.142]}
+[component_container_isolated-6] [INFO] [1795531478.965761303] [bt_navigator]: Begin navigating from current location (4.02, 0.96) to (2.65, 1.40)
+[component_container_isolated-6] [INFO] [1795531478.975665020] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531479.179014350] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531481.492277330] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531481.593188627] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531483.507156694] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531483.718132685] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531485.639200516] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531485.948875499] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531486.482534316] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531486.860207117] [bt_navigator]: Goal succeeded
+[component_container_isolated-6] [INFO] [1795531486.912514983] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531486.912555371] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531486.965550915] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531486.965592834] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531487.518374941] [cube_mission]: {"state": "NAVIGATE", "color": "green", "elapsed_s": 131.78, "goal": [1.4, 1.0, 3.142]}
+[component_container_isolated-6] [INFO] [1795531487.523835739] [bt_navigator]: Begin navigating from current location (2.69, 1.39) to (1.40, 1.00)
+[component_container_isolated-6] [INFO] [1795531487.527628441] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531487.608721325] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531489.655689940] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531489.989451934] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531491.944954464] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531492.262912263] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531494.079121011] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531494.203949311] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531494.207543807] [bt_navigator]: Goal succeeded
+[component_container_isolated-6] [INFO] [1795531494.224612287] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531494.224680791] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531494.276159941] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531494.276202192] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531494.828034669] [cube_mission]: {"state": "NAVIGATE", "color": "blue", "elapsed_s": 139.09, "goal": [0.15, 1.0, -1.571]}
+[component_container_isolated-6] [INFO] [1795531494.831209175] [bt_navigator]: Begin navigating from current location (1.42, 1.00) to (0.15, 1.00)
+[component_container_isolated-6] [INFO] [1795531494.832157565] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531494.936052981] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531497.039434331] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531497.141264217] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531499.053459009] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531499.306815206] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531501.262602638] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531501.400911147] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531501.698324353] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531501.952469667] [bt_navigator]: Goal succeeded
+[component_container_isolated-6] [INFO] [1795531501.961330804] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531501.961399706] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531502.013787533] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531502.013849576] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531502.562168571] [cube_mission]: {"state": "NAVIGATE", "color": "blue", "elapsed_s": 146.83, "goal": [0.15, 0.2, 0.0]}
+[component_container_isolated-6] [INFO] [1795531502.564058561] [bt_navigator]: Begin navigating from current location (0.17, 1.01) to (0.15, 0.20)
+[component_container_isolated-6] [INFO] [1795531502.564842966] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531502.789507016] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531504.841863134] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531505.176189424] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531506.945381777] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531507.054873200] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531508.139040151] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531508.258721474] [bt_navigator]: Goal succeeded
+[mission-11] [INFO] [1795531508.301056410] [cube_mission]: {"state": "ACQUIRE", "color": "blue", "elapsed_s": 152.57}
+[component_container_isolated-6] [INFO] [1795531510.643064948] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531510.643106871] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531510.693775035] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531510.693930705] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531511.246780181] [cube_mission]: {"state": "NAVIGATE", "color": "blue", "elapsed_s": 155.51, "goal": [0.633, -0.154, 1.062]}
+[component_container_isolated-6] [INFO] [1795531511.252916440] [bt_navigator]: Begin navigating from current location (0.12, 0.22) to (0.63, -0.15)
+[component_container_isolated-6] [INFO] [1795531511.254117316] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531511.346757544] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531513.625962322] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531513.724756685] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531515.714272913] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531515.929072635] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531517.903518461] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531518.006120523] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531520.001598207] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531520.112293219] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531520.112409842] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531520.440094293] [bt_navigator]: Goal succeeded
+[mission-11] [INFO] [1795531520.471910858] [cube_mission]: {"state": "ACQUIRE", "color": "blue", "elapsed_s": 164.74}
+[mission-11] [INFO] [1795531522.421094617] [cube_mission]: {"state": "PUSH", "color": "blue", "elapsed_s": 166.69, "destination": [1.5, 1.4]}
+[mission-11] [INFO] [1795531522.423309373] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [0.821, 0.304], "remaining": 1.289, "yaw_error": -0.134, "bearing": -0.063, "velocity": [0.12, -0.433]}
+[mission-11] [INFO] [1795531524.473931030] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [0.823, 0.308], "remaining": 1.285, "yaw_error": -0.003, "bearing": 0.136, "velocity": [0.12, 0.06]}
+[mission-11] [INFO] [1795531526.497555867] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [0.912, 0.362], "remaining": 1.193, "yaw_error": 0.002, "bearing": 0.015, "velocity": [0.25, 0.013]}
+[mission-11] [INFO] [1795531528.536173533] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [1.093, 0.751], "remaining": 0.766, "yaw_error": -0.028, "bearing": 0.123, "velocity": [0.25, -0.024]}
+[mission-11] [INFO] [1795531530.745069067] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [1.259, 1.024], "remaining": 0.447, "yaw_error": -0.022, "bearing": 0.123, "velocity": [0.25, -0.004]}
+[mission-11] [INFO] [1795531532.731915996] [cube_mission]: {"state": "PUSH_REACHED", "color": "blue", "elapsed_s": 177.0, "cube": [1.506, 1.415]}
+[component_container_isolated-6] [INFO] [1795531535.293123360] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531535.293265933] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531535.344570183] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531535.345095187] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531535.898682205] [cube_mission]: {"state": "NAVIGATE", "color": "blue", "elapsed_s": 180.16, "goal": [0.796, 1.588, -0.085]}
+[component_container_isolated-6] [INFO] [1795531535.902685581] [bt_navigator]: Begin navigating from current location (1.30, 1.01) to (0.80, 1.59)
+[component_container_isolated-6] [INFO] [1795531535.903952838] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531535.905731859] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531537.961302472] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531538.094509154] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531539.977727442] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531540.208782623] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531542.106855387] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531542.212139205] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531544.215639769] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531544.431262947] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531546.397791154] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531546.670235432] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531548.551554230] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531548.661905335] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531550.611590631] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531550.713474195] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531551.342246964] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531551.448943555] [bt_navigator]: Goal succeeded
+[component_container_isolated-6] [INFO] [1795531551.483780963] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531551.484085337] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531551.534231998] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531551.534473308] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531552.085703091] [cube_mission]: {"state": "NAVIGATE", "color": "blue", "elapsed_s": 196.35, "goal": [0.995, 1.571, -0.085]}
+[component_container_isolated-6] [INFO] [1795531552.087859412] [bt_navigator]: Begin navigating from current location (0.81, 1.56) to (1.00, 1.57)
+[component_container_isolated-6] [INFO] [1795531552.088964370] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531552.225810348] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531554.263544943] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531554.368762240] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531556.278902007] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531556.415761649] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531556.659471278] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531556.882487346] [bt_navigator]: Goal succeeded
+[mission-11] [INFO] [1795531556.898879548] [cube_mission]: {"state": "ACQUIRE", "color": "blue", "elapsed_s": 201.16}
+[mission-11] [INFO] [1795531559.263071752] [cube_mission]: {"state": "PUSH", "color": "blue", "elapsed_s": 203.53, "destination": [3.0, 1.4]}
+[mission-11] [INFO] [1795531559.263989192] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [1.575, 1.533], "remaining": 1.431, "yaw_error": -0.066, "bearing": -0.006, "velocity": [0.12, -0.2]}
+[mission-11] [INFO] [1795531561.280776736] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [1.575, 1.538], "remaining": 1.432, "yaw_error": -0.009, "bearing": 0.044, "velocity": [0.12, -0.006]}
+[mission-11] [INFO] [1795531563.282568755] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [1.712, 1.51], "remaining": 1.293, "yaw_error": -0.006, "bearing": 0.02, "velocity": [0.25, -0.009]}
+[mission-11] [INFO] [1795531565.318019226] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [2.098, 1.49], "remaining": 0.906, "yaw_error": -0.011, "bearing": 0.056, "velocity": [0.25, -0.003]}
+[mission-11] [INFO] [1795531567.329233476] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [2.51, 1.465], "remaining": 0.494, "yaw_error": -0.017, "bearing": 0.123, "velocity": [0.25, 0.01]}
+[mission-11] [INFO] [1795531569.357326521] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [2.902, 1.419], "remaining": 0.1, "yaw_error": -0.066, "bearing": 0.123, "velocity": [0.25, -0.137]}
+[mission-11] [INFO] [1795531570.035865658] [cube_mission]: {"state": "PUSH_REACHED", "color": "blue", "elapsed_s": 214.3, "cube": [2.976, 1.398]}
+[component_container_isolated-6] [INFO] [1795531572.760249660] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531572.760349048] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531572.810889317] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531572.810990934] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531573.363030701] [cube_mission]: {"state": "NAVIGATE", "color": "blue", "elapsed_s": 217.63, "goal": [2.598, 1.611, -0.443]}
+[component_container_isolated-6] [INFO] [1795531573.365200627] [bt_navigator]: Begin navigating from current location (2.52, 1.43) to (2.60, 1.61)
+[component_container_isolated-6] [INFO] [1795531573.367293790] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531573.576483631] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531575.627986500] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531575.733274512] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531577.707580407] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531577.919506265] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531580.016977309] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531580.231534994] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531581.637275225] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531581.844778283] [bt_navigator]: Goal succeeded
+[mission-11] [INFO] [1795531581.873617284] [cube_mission]: {"state": "ACQUIRE", "color": "blue", "elapsed_s": 226.14}
+[mission-11] [INFO] [1795531583.888460360] [cube_mission]: {"state": "PUSH", "color": "blue", "elapsed_s": 228.15, "destination": [4.2, 0.85]}
+[mission-11] [INFO] [1795531583.895148345] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [3.114, 1.365], "remaining": 1.202, "yaw_error": -0.056, "bearing": 0.05, "velocity": [0.12, -0.142]}
+[mission-11] [INFO] [1795531585.920472222] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [3.111, 1.378], "remaining": 1.21, "yaw_error": -0.011, "bearing": 0.017, "velocity": [0.12, -0.023]}
+[mission-11] [INFO] [1795531587.935164455] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [3.232, 1.339], "remaining": 1.085, "yaw_error": -0.019, "bearing": 0.123, "velocity": [0.25, 0.004]}
+[mission-11] [INFO] [1795531589.980208614] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [3.597, 1.163], "remaining": 0.679, "yaw_error": -0.022, "bearing": 0.123, "velocity": [0.25, -0.004]}
+[mission-11] [INFO] [1795531592.025721512] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [4.002, 0.94], "remaining": 0.217, "yaw_error": 0.041, "bearing": 0.123, "velocity": [0.25, 0.186]}
+[mission-11] [INFO] [1795531592.704833137] [cube_mission]: {"state": "PUSH_REACHED", "color": "blue", "elapsed_s": 236.97, "cube": [4.194, 0.861]}
+[component_container_isolated-6] [INFO] [1795531595.891387337] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531595.891975025] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531595.943095059] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531595.943574759] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531596.497668160] [cube_mission]: {"state": "NAVIGATE", "color": "blue", "elapsed_s": 240.76, "goal": [3.895, 1.465, -0.977]}
+[component_container_isolated-6] [INFO] [1795531596.503568085] [bt_navigator]: Begin navigating from current location (3.74, 1.02) to (3.90, 1.47)
+[component_container_isolated-6] [INFO] [1795531596.504049714] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531596.505344339] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531598.511523273] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531598.616638087] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531600.543242359] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531600.646680699] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531602.659555909] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531603.065511502] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531604.959455982] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531605.060525085] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531607.015311598] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531607.120588863] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531609.047351445] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531609.050246605] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531609.052781959] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531609.052872523] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531609.150802434] [bt_navigator]: Goal succeeded
+[component_container_isolated-6] [INFO] [1795531609.191267739] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531609.191434717] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531609.241383259] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531609.241480523] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531609.793420122] [cube_mission]: {"state": "NAVIGATE", "color": "blue", "elapsed_s": 254.06, "goal": [4.007, 1.3, -0.977]}
+[component_container_isolated-6] [INFO] [1795531609.797199396] [bt_navigator]: Begin navigating from current location (3.88, 1.45) to (4.01, 1.30)
+[component_container_isolated-6] [INFO] [1795531609.798848742] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531609.895052122] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531611.960986902] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531612.200538901] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531623.494075728] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531623.495861800] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531623.614483656] [bt_navigator]: Goal succeeded
+[mission-11] [INFO] [1795531623.644616723] [cube_mission]: {"state": "ACQUIRE", "color": "blue", "elapsed_s": 267.91}
+[mission-11] [INFO] [1795531626.653672393] [cube_mission]: {"state": "PUSH", "color": "blue", "elapsed_s": 270.92, "destination": [4.75, 0.2]}
+[mission-11] [INFO] [1795531626.658132666] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [4.32, 0.806], "remaining": 0.743, "yaw_error": 0.024, "bearing": -0.023, "velocity": [0.12, 0.062]}
+[mission-11] [INFO] [1795531628.827684672] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [4.318, 0.806], "remaining": 0.744, "yaw_error": 0.004, "bearing": -0.041, "velocity": [0.12, -0.009]}
+[mission-11] [INFO] [1795531630.834007138] [cube_mission]: {"phase": "push_feedback", "target_source": "camera_zone", "cube": [4.319, 0.803], "remaining": 0.722, "yaw_error": 0.008, "bearing": -0.044, "velocity": [0.12, 0.001]}
+[mission-11] [INFO] [1795531632.837791695] [cube_mission]: {"phase": "push_feedback", "target_source": "camera_zone", "cube": [4.38, 0.694], "remaining": 0.594, "yaw_error": 0.031, "bearing": -0.079, "velocity": [0.25, 0.054]}
+[mission-11] [INFO] [1795531634.864865096] [cube_mission]: {"phase": "push_feedback", "target_source": "camera_zone", "cube": [4.617, 0.371], "remaining": 0.187, "yaw_error": 0.023, "bearing": -0.118, "velocity": [0.08, 0.011]}
+[mission-11] [INFO] [1795531636.890180755] [cube_mission]: {"phase": "push_feedback", "target_source": "camera_zone", "cube": [4.691, 0.287], "remaining": 0.074, "yaw_error": 0.0, "bearing": -0.118, "velocity": [0.04, -0.058]}
+[mission-11] [INFO] [1795531637.809717332] [cube_mission]: {"state": "PUSH_REACHED", "color": "blue", "elapsed_s": 282.07, "cube": [4.704, 0.254]}
+[mission-11] [INFO] [1795531640.498265002] [cube_mission]: {"state": "VERIFY", "color": "blue", "elapsed_s": 284.76}
+[mission-11] [INFO] [1795531641.464414700] [cube_mission]: {"state": "DELIVERY_CONFIRMED", "color": "blue", "elapsed_s": 285.73, "relative_error_m": [-0.0218, 0.0157], "frames": 4}
+[mission-11] [INFO] [1795531641.467741909] [cube_mission]: {"state": "DELIVERED", "color": "blue", "elapsed_s": 285.73, "cube": [4.723, 0.239]}
+[component_container_isolated-6] [INFO] [1795531641.470933138] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531641.471005890] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531641.643408159] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531641.643557711] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531642.193529146] [cube_mission]: {"state": "NAVIGATE", "color": "blue", "elapsed_s": 286.46, "goal": [4.0, 1.0, 3.142]}
+[component_container_isolated-6] [INFO] [1795531642.196270294] [bt_navigator]: Begin navigating from current location (4.41, 0.73) to (4.00, 1.00)
+[component_container_isolated-6] [INFO] [1795531642.197151378] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531642.289649469] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531644.328088303] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531644.633716382] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531646.567498757] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531646.661694824] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531648.698368069] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531649.009752558] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531651.051127770] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531651.173163431] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531653.104486156] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531653.106398965] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531653.110574959] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531653.110882944] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531653.111618699] [bt_navigator]: Goal succeeded
+[component_container_isolated-6] [INFO] [1795531653.137616377] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531653.137748302] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531653.189236194] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531653.189510361] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531653.739667437] [cube_mission]: {"state": "NAVIGATE", "color": "blue", "elapsed_s": 298.0, "goal": [2.65, 1.4, 3.142]}
+[component_container_isolated-6] [INFO] [1795531653.741983590] [bt_navigator]: Begin navigating from current location (4.01, 1.01) to (2.65, 1.40)
+[component_container_isolated-6] [INFO] [1795531653.746086471] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531654.089117616] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531656.157471872] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531656.258543501] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531658.373638733] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531658.489454968] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531660.651390909] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531660.746738227] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531661.562514708] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531661.689999532] [bt_navigator]: Goal succeeded
+[component_container_isolated-6] [INFO] [1795531661.697642299] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531661.698140147] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531661.751402517] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531661.751543576] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531662.309581025] [cube_mission]: {"state": "NAVIGATE", "color": "blue", "elapsed_s": 306.57, "goal": [1.4, 1.0, 3.142]}
+[component_container_isolated-6] [INFO] [1795531662.324552558] [bt_navigator]: Begin navigating from current location (2.67, 1.39) to (1.40, 1.00)
+[component_container_isolated-6] [INFO] [1795531662.325306908] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531662.560933909] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531664.567167401] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531664.770979732] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531666.773902076] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531667.005183830] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531668.899742666] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531669.119274872] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531669.225110953] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531669.537290835] [bt_navigator]: Goal succeeded
+[component_container_isolated-6] [INFO] [1795531669.551548274] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531669.551616415] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531669.603763796] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531669.603799082] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531670.154111210] [cube_mission]: {"state": "NAVIGATE", "color": "red", "elapsed_s": 314.42, "goal": [0.15, 2.6, 0.0]}
+[component_container_isolated-6] [INFO] [1795531670.156018255] [bt_navigator]: Begin navigating from current location (1.42, 1.03) to (0.15, 2.60)
+[component_container_isolated-6] [INFO] [1795531670.156629396] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531670.158252370] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531672.163391798] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531672.838967964] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531674.763744826] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531675.499235682] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531676.797863524] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531676.900050322] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531678.894403250] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531679.360580107] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531681.077490776] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531681.393649363] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531683.275867944] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531683.374575013] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531685.331151159] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531685.544728597] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531686.330688882] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531686.441071711] [bt_navigator]: Goal succeeded
+[mission-11] [INFO] [1795531686.470604340] [cube_mission]: {"state": "ACQUIRE", "color": "red", "elapsed_s": 330.74}
+[component_container_isolated-6] [INFO] [1795531688.610401200] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531688.610471295] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531688.662749339] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531688.662831356] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531689.233487541] [cube_mission]: {"state": "NAVIGATE", "color": "red", "elapsed_s": 333.5, "goal": [0.593, 2.946, -1.04]}
+[component_container_isolated-6] [INFO] [1795531689.243488429] [bt_navigator]: Begin navigating from current location (0.17, 2.58) to (0.59, 2.95)
+[component_container_isolated-6] [INFO] [1795531689.246925978] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531689.360493785] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531691.396966608] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531691.502308685] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531693.500774897] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531693.591277104] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531695.667643050] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531695.895023845] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531696.730746980] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531697.040441167] [bt_navigator]: Goal succeeded
+[mission-11] [INFO] [1795531697.069988992] [cube_mission]: {"state": "ACQUIRE", "color": "red", "elapsed_s": 341.33}
+[mission-11] [INFO] [1795531699.277303244] [cube_mission]: {"state": "PUSH", "color": "red", "elapsed_s": 343.54, "destination": [1.5, 1.4]}
+[mission-11] [INFO] [1795531699.278614650] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [0.794, 2.493], "remaining": 1.301, "yaw_error": 0.075, "bearing": 0.043, "velocity": [0.12, 0.247]}
+[mission-11] [INFO] [1795531701.282619789] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [0.795, 2.493], "remaining": 1.301, "yaw_error": 0.019, "bearing": -0.12, "velocity": [0.12, -0.003]}
+[mission-11] [INFO] [1795531703.283950078] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [0.957, 2.228], "remaining": 0.99, "yaw_error": 0.025, "bearing": -0.118, "velocity": [0.25, 0.016]}
+[mission-11] [INFO] [1795531705.476392955] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [1.158, 1.916], "remaining": 0.619, "yaw_error": 0.025, "bearing": -0.118, "velocity": [0.25, 0.015]}
+[mission-11] [INFO] [1795531707.515806544] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [1.383, 1.563], "remaining": 0.201, "yaw_error": 0.022, "bearing": -0.118, "velocity": [0.25, 0.007]}
+[mission-11] [INFO] [1795531708.239345394] [cube_mission]: {"state": "PUSH_REACHED", "color": "red", "elapsed_s": 352.5, "cube": [1.507, 1.396]}
+[component_container_isolated-6] [INFO] [1795531711.582081190] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531711.582180491] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531711.634732421] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531711.634804102] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531712.184609504] [cube_mission]: {"state": "NAVIGATE", "color": "red", "elapsed_s": 356.45, "goal": [0.837, 1.141, 0.119]}
+[component_container_isolated-6] [INFO] [1795531712.191413511] [bt_navigator]: Begin navigating from current location (1.30, 1.79) to (0.84, 1.14)
+[component_container_isolated-6] [INFO] [1795531712.193236943] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531712.390840265] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531714.404703106] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531714.513743942] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531716.432141731] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531716.535961773] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531718.810549910] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531718.927973254] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531720.902634389] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531721.007771873] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531722.691031584] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531722.793573789] [bt_navigator]: Goal succeeded
+[component_container_isolated-6] [INFO] [1795531722.799020289] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531722.799083273] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531722.849658623] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531722.849759591] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531723.404347155] [cube_mission]: {"state": "NAVIGATE", "color": "red", "elapsed_s": 367.67, "goal": [1.035, 1.165, 0.119]}
+[component_container_isolated-6] [INFO] [1795531723.408638164] [bt_navigator]: Begin navigating from current location (0.83, 1.17) to (1.04, 1.17)
+[component_container_isolated-6] [INFO] [1795531723.411627323] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531723.417742083] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531725.421182197] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531725.561213072] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531727.509525562] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531727.700094051] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531727.935817067] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531728.039505522] [bt_navigator]: Goal succeeded
+[mission-11] [INFO] [1795531728.064151688] [cube_mission]: {"state": "ACQUIRE", "color": "red", "elapsed_s": 372.33}
+[mission-11] [INFO] [1795531730.136639047] [cube_mission]: {"state": "PUSH", "color": "red", "elapsed_s": 374.4, "destination": [3.0, 1.4]}
+[mission-11] [INFO] [1795531730.139886805] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [1.603, 1.236], "remaining": 1.407, "yaw_error": 0.012, "bearing": -0.068, "velocity": [0.12, 0.001]}
+[mission-11] [INFO] [1795531732.298363518] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [1.599, 1.232], "remaining": 1.411, "yaw_error": 0.003, "bearing": -0.004, "velocity": [0.12, 0.006]}
+[mission-11] [INFO] [1795531734.311176756] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [1.6, 1.232], "remaining": 1.41, "yaw_error": -0.001, "bearing": -0.005, "velocity": [0.25, -0.006]}
+[mission-11] [INFO] [1795531736.323491867] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [1.88, 1.247], "remaining": 1.13, "yaw_error": 0.014, "bearing": -0.059, "velocity": [0.25, 0.012]}
+[mission-11] [INFO] [1795531738.355251944] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [2.263, 1.282], "remaining": 0.746, "yaw_error": 0.018, "bearing": -0.117, "velocity": [0.25, -0.004]}
+[mission-11] [INFO] [1795531740.393144590] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [2.664, 1.342], "remaining": 0.341, "yaw_error": 0.024, "bearing": -0.117, "velocity": [0.25, 0.015]}
+[mission-11] [INFO] [1795531741.542310949] [cube_mission]: {"state": "PUSH_REACHED", "color": "red", "elapsed_s": 385.81, "cube": [2.973, 1.399]}
+[component_container_isolated-6] [INFO] [1795531745.611124932] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531745.611468877] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531745.661079337] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531745.661181975] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531746.211301906] [cube_mission]: {"state": "NAVIGATE", "color": "red", "elapsed_s": 390.48, "goal": [2.588, 1.675, -0.473]}
+[component_container_isolated-6] [INFO] [1795531746.213635876] [bt_navigator]: Begin navigating from current location (2.49, 1.37) to (2.59, 1.68)
+[component_container_isolated-6] [INFO] [1795531746.214515792] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531746.441140137] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531748.498356292] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531749.174909728] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531750.796851786] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531750.897853917] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531752.878547396] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531753.391621299] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531755.243439795] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531755.432879023] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531757.300329858] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531757.401829620] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531758.493703318] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531758.600671984] [bt_navigator]: Goal succeeded
+[mission-11] [INFO] [1795531758.638329383] [cube_mission]: {"state": "ACQUIRE", "color": "red", "elapsed_s": 402.9}
+[mission-11] [INFO] [1795531760.774950615] [cube_mission]: {"state": "PUSH", "color": "red", "elapsed_s": 405.04, "destination": [4.2, 0.85]}
+[mission-11] [INFO] [1795531760.782248506] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [3.109, 1.406], "remaining": 1.225, "yaw_error": -0.104, "bearing": -0.021, "velocity": [0.12, -0.324]}
+[mission-11] [INFO] [1795531762.811086620] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [3.103, 1.403], "remaining": 1.229, "yaw_error": 0.001, "bearing": 0.032, "velocity": [0.12, 0.02]}
+[mission-11] [INFO] [1795531764.841109627] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [3.198, 1.384], "remaining": 1.135, "yaw_error": -0.026, "bearing": 0.092, "velocity": [0.25, -0.033]}
+[mission-11] [INFO] [1795531766.896320200] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [3.473, 1.253], "remaining": 0.831, "yaw_error": -0.034, "bearing": 0.123, "velocity": [0.25, -0.04]}
+[mission-11] [INFO] [1795531769.355194100] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [3.798, 1.072], "remaining": 0.459, "yaw_error": -0.02, "bearing": 0.123, "velocity": [0.25, 0.002]}
+[mission-11] [INFO] [1795531771.378945216] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [3.964, 0.981], "remaining": 0.27, "yaw_error": -0.024, "bearing": 0.123, "velocity": [0.25, -0.011]}
+[mission-11] [INFO] [1795531772.349004018] [cube_mission]: {"state": "PUSH_REACHED", "color": "red", "elapsed_s": 416.61, "cube": [4.218, 0.838]}
+[component_container_isolated-6] [INFO] [1795531775.589841026] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531775.590018001] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531775.641045991] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531775.641150694] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531776.462696761] [cube_mission]: {"state": "NAVIGATE", "color": "red", "elapsed_s": 420.71, "goal": [4.131, 0.036, 1.334]}
+[component_container_isolated-6] [INFO] [1795531776.512699276] [bt_navigator]: Begin navigating from current location (3.75, 1.03) to (4.13, 0.04)
+[component_container_isolated-6] [INFO] [1795531776.514259184] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531776.794489255] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531778.821665912] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531778.928428561] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531780.859268436] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531780.967276864] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531782.964013956] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531783.176096987] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531785.144033514] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531785.250664627] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531787.240032712] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531788.050792439] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531789.942316936] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531790.303527078] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531792.238205629] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531792.343912229] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531792.346200592] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531792.346877806] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531792.570991920] [bt_navigator]: Goal succeeded
+[component_container_isolated-6] [INFO] [1795531792.593573414] [local_costmap.local_costmap]: Received request to clear entirely for all layers in local_costmap
+[component_container_isolated-6] [INFO] [1795531792.593610110] [local_costmap.local_costmap]: Clearing all layers in costmap: local_costmap
+[component_container_isolated-6] [INFO] [1795531792.645126353] [global_costmap.global_costmap]: Received request to clear entirely for all layers in global_costmap
+[component_container_isolated-6] [INFO] [1795531792.645165868] [global_costmap.global_costmap]: Clearing all layers in costmap: global_costmap
+[mission-11] [INFO] [1795531793.199387056] [cube_mission]: {"state": "NAVIGATE", "color": "red", "elapsed_s": 437.46, "goal": [4.178, 0.23, 1.334]}
+[component_container_isolated-6] [INFO] [1795531793.201197577] [bt_navigator]: Begin navigating from current location (4.11, 0.06) to (4.18, 0.23)
+[component_container_isolated-6] [INFO] [1795531793.202913149] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531793.465480993] [controller_server]: Received a goal, begin computing control effort.
+[component_container_isolated-6] [INFO] [1795531795.511211564] [planner_server]: Computing path to goal.
+[component_container_isolated-6] [INFO] [1795531795.722005519] [controller_server]: Passing new path to controller.
+[component_container_isolated-6] [INFO] [1795531795.940688498] [controller_server]: Reached the goal!
+[component_container_isolated-6] [INFO] [1795531796.159689933] [bt_navigator]: Goal succeeded
+[mission-11] [INFO] [1795531796.186802585] [cube_mission]: {"state": "ACQUIRE", "color": "red", "elapsed_s": 440.45}
+[mission-11] [INFO] [1795531800.449672388] [cube_mission]: {"state": "PUSH", "color": "red", "elapsed_s": 444.71, "destination": [4.75, 2.6]}
+[mission-11] [INFO] [1795531800.466666749] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [4.284, 0.773], "remaining": 1.885, "yaw_error": -0.027, "bearing": 0.029, "velocity": [0.12, -0.066]}
+[mission-11] [INFO] [1795531802.509322521] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [4.284, 0.786], "remaining": 1.873, "yaw_error": -0.008, "bearing": 0.068, "velocity": [0.12, 0.011]}
+[mission-11] [INFO] [1795531804.716760995] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [4.326, 0.867], "remaining": 1.784, "yaw_error": 0.004, "bearing": 0.022, "velocity": [0.25, 0.023]}
+[mission-11] [INFO] [1795531806.752806414] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [4.36, 1.091], "remaining": 1.559, "yaw_error": -0.017, "bearing": 0.082, "velocity": [0.25, -0.009]}
+[mission-11] [INFO] [1795531808.759176859] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [4.431, 1.406], "remaining": 1.236, "yaw_error": -0.022, "bearing": 0.123, "velocity": [0.25, -0.005]}
+[mission-11] [INFO] [1795531810.797340195] [cube_mission]: {"phase": "push_feedback", "target_source": "camera_zone", "cube": [4.541, 1.845], "remaining": 0.813, "yaw_error": -0.01, "bearing": 0.123, "velocity": [0.25, 0.03]}
+[mission-11] [INFO] [1795531812.832028084] [cube_mission]: {"phase": "push_feedback", "target_source": "map_waypoint", "cube": [4.605, 2.162], "remaining": 0.461, "yaw_error": -0.091, "bearing": 0.123, "velocity": [0.25, -0.213]}
+[mission-11] [INFO] [1795531814.885489060] [cube_mission]: {"phase": "push_feedback", "target_source": "camera_zone", "cube": [4.693, 2.517], "remaining": 0.119, "yaw_error": 0.008, "bearing": -0.019, "velocity": [0.08, 0.015]}
+[mission-11] [INFO] [1795531816.769960842] [cube_mission]: {"state": "PUSH_REACHED", "color": "red", "elapsed_s": 461.03, "cube": [4.694, 2.596]}
+[mission-11] [INFO] [1795531819.183104600] [cube_mission]: {"state": "VERIFY", "color": "red", "elapsed_s": 463.45}
+[mission-11] [INFO] [1795531820.178665884] [cube_mission]: {"state": "DELIVERY_CONFIRMED", "color": "red", "elapsed_s": 464.44, "relative_error_m": [-0.0051, -0.0238], "frames": 4}
+[mission-11] [INFO] [1795531820.180091372] [cube_mission]: {"state": "DELIVERED", "color": "red", "elapsed_s": 464.45, "cube": [4.708, 2.61]}
+[mission-11] [INFO] [1795531820.180989185] [cube_mission]: {"state": "COMPLETE", "color": "red", "elapsed_s": 464.45}

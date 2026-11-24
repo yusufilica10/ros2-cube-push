@@ -1,0 +1,68 @@
+{
+  "state": "FAILED",
+  "delivered": [],
+  "failures": [
+    {
+      "color": "green",
+      "reason": "Camera/TF lost during push; stopped"
+    }
+  ],
+  "elapsed_s": 54.22,
+  "events": [
+    {
+      "state": "WAITING_FOR_NAV2",
+      "color": null,
+      "elapsed_s": 0
+    },
+    {
+      "state": "MISSION_STARTED",
+      "color": null,
+      "elapsed_s": 0.0
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 0.62,
+      "goal": [
+        0.15,
+        1.4,
+        0.0
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "green",
+      "elapsed_s": 17.21
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "green",
+      "elapsed_s": 19.81,
+      "goal": [
+        0.225,
+        1.408,
+        -0.003
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "green",
+      "elapsed_s": 25.05
+    },
+    {
+      "state": "PUSH",
+      "color": "green",
+      "elapsed_s": 40.34,
+      "destination": [
+        3.0,
+        1.4
+      ]
+    },
+    {
+      "state": "FAILED",
+      "color": "green",
+      "elapsed_s": 54.17,
+      "reason": "Camera/TF lost during push; stopped"
+    }
+  ]
+}

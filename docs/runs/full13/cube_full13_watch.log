@@ -1,0 +1,56 @@
+std_srvs.srv.Trigger_Response(success=True, message='Mission requested')
+{"state": "WAITING_FOR_NAV2", "active_color": null, "elapsed_s": 0, "sim_elapsed_s": 0, "delivered": [], "failures": []}
+{"state": "MISSION_STARTED", "active_color": null, "elapsed_s": 0.0, "sim_elapsed_s": 0.0, "delivered": [], "failures": []}
+{"state": "NAVIGATE", "active_color": "green", "elapsed_s": 0.6, "sim_elapsed_s": 0.4, "delivered": [], "failures": []}
+{"state": "ACQUIRE", "active_color": "green", "elapsed_s": 17.2, "sim_elapsed_s": 12.1, "delivered": [], "failures": []}
+{"state": "NAVIGATE", "active_color": "green", "elapsed_s": 19.8, "sim_elapsed_s": 14.2, "delivered": [], "failures": []}
+{"state": "ACQUIRE", "active_color": "green", "elapsed_s": 25.1, "sim_elapsed_s": 18.5, "delivered": [], "failures": []}
+{"state": "PUSH", "active_color": "green", "elapsed_s": 40.4, "sim_elapsed_s": 20.1, "delivered": [], "failures": []}
+{"state": "FAILED", "active_color": "green", "elapsed_s": 54.2, "sim_elapsed_s": 20.9, "delivered": [], "failures": [{"color": "green", "reason": "Camera/TF lost during push; stopped"}]}
+{
+  "delivered_count": 0,
+  "cubes": {
+    "red": {
+      "delivered": false,
+      "center": {
+        "x": -1.6,
+        "y": 1.2,
+        "z": 0.08999987733572834
+      },
+      "orientation": {
+        "x": -1.2011734088483236e-18,
+        "y": 4.362835718455072e-18,
+        "z": 1.1726455251764688e-18,
+        "w": 1
+      }
+    },
+    "green": {
+      "delivered": false,
+      "center": {
+        "x": -1.6,
+        "y": -1.9958626439201651e-19,
+        "z": 0.08999987733572834
+      },
+      "orientation": {
+        "x": 1.62082772127297e-18,
+        "y": 4.331945081048241e-18,
+        "z": 7.885884399560743e-19,
+        "w": 1
+      }
+    },
+    "blue": {
+      "delivered": false,
+      "center": {
+        "x": -1.6,
+        "y": -1.2,
+        "z": 0.08999987733572834
+      },
+      "orientation": {
+        "x": -1.094506366581127e-18,
+        "y": 3.520175446217641e-18,
+        "z": 1.322258934440202e-18,
+        "w": 1
+      }
+    }
+  }
+}

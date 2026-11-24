@@ -1,0 +1,456 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <world name="competition">
+    <physics name="physics" type="ignored">
+      <max_step_size>.002</max_step_size>
+      <real_time_factor>1</real_time_factor>
+    </physics>
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics" />
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands" />
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster" />
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <light name="sun" type="directional">
+      <pose>0 0 5 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <direction>-0.3 0.2 -1</direction>
+      <cast_shadows>true</cast_shadows>
+    </light>
+    <model name="floor">
+      <static>true</static>
+      <pose>0 0 -0.05 0 0 0</pose>
+      <link name="body">
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>4.674166666666667</ixx>
+            <iyy>4.674166666666667</iyy>
+            <izz>4.674166666666667</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>6.2 4.2 0.1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>6.2 4.2 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.65 .65 .65 1</ambient>
+            <diffuse>.65 .65 .65 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="north">
+      <static>true</static>
+      <pose>0 2.05 0.25 0 0 0</pose>
+      <link name="body">
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>3.225</ixx>
+            <iyy>3.225</iyy>
+            <izz>3.225</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>6.2 0.1 0.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>6.2 0.1 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.25 .25 .28 1</ambient>
+            <diffuse>.25 .25 .28 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="south">
+      <static>true</static>
+      <pose>0 -2.05 0.25 0 0 0</pose>
+      <link name="body">
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>3.225</ixx>
+            <iyy>3.225</iyy>
+            <izz>3.225</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>6.2 0.1 0.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>6.2 0.1 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.25 .25 .28 1</ambient>
+            <diffuse>.25 .25 .28 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="east">
+      <static>true</static>
+      <pose>3.05 0 0.25 0 0 0</pose>
+      <link name="body">
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1.3550000000000002</ixx>
+            <iyy>1.3550000000000002</iyy>
+            <izz>1.3550000000000002</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.1 4 0.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.1 4 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.25 .25 .28 1</ambient>
+            <diffuse>.25 .25 .28 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="west">
+      <static>true</static>
+      <pose>-3.05 0 0.25 0 0 0</pose>
+      <link name="body">
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1.3550000000000002</ixx>
+            <iyy>1.3550000000000002</iyy>
+            <izz>1.3550000000000002</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.1 4 0.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.1 4 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.25 .25 .28 1</ambient>
+            <diffuse>.25 .25 .28 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="inner_a">
+      <static>true</static>
+      <pose>-0.35 -1.275 0.25 0 0 0</pose>
+      <link name="body">
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.196875</ixx>
+            <iyy>0.196875</iyy>
+            <izz>0.196875</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.1 1.45 0.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.1 1.45 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.25 .25 .28 1</ambient>
+            <diffuse>.25 .25 .28 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="inner_b">
+      <static>true</static>
+      <pose>-0.35 1.275 0.25 0 0 0</pose>
+      <link name="body">
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.196875</ixx>
+            <iyy>0.196875</iyy>
+            <izz>0.196875</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.1 1.45 0.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.1 1.45 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.25 .25 .28 1</ambient>
+            <diffuse>.25 .25 .28 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="inner_c">
+      <static>true</static>
+      <pose>0.9 -1.5 0.25 0 0 0</pose>
+      <link name="body">
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.105</ixx>
+            <iyy>0.105</iyy>
+            <izz>0.105</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.1 1 0.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.1 1 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.25 .25 .28 1</ambient>
+            <diffuse>.25 .25 .28 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="inner_d">
+      <static>true</static>
+      <pose>0.9 1.1 0.25 0 0 0</pose>
+      <link name="body">
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.2916666666666667</ixx>
+            <iyy>0.2916666666666667</iyy>
+            <izz>0.2916666666666667</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.1 1.8 0.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.1 1.8 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.25 .25 .28 1</ambient>
+            <diffuse>.25 .25 .28 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="red_cube">
+      <static>false</static>
+      <pose>-1.6 1.2 0.09 0 0 0</pose>
+      <link name="body">
+        <inertial>
+          <mass>0.15</mass>
+          <inertia>
+            <ixx>0.001215</ixx>
+            <iyy>0.001215</iyy>
+            <izz>0.001215</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.18 0.18 0.18</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.18 0.18 0.18</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="red_target">
+      <static>true</static>
+      <pose>2.35 1.2 0.001 0 0 0</pose>
+      <link name="marker">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>.60 .60 .002</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 .75 .75 1</ambient>
+            <diffuse>1 .75 .75 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="green_cube">
+      <static>false</static>
+      <pose>-1.6 0 0.09 0 0 0</pose>
+      <link name="body">
+        <inertial>
+          <mass>0.15</mass>
+          <inertia>
+            <ixx>0.001215</ixx>
+            <iyy>0.001215</iyy>
+            <izz>0.001215</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.18 0.18 0.18</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.18 0.18 0.18</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="green_target">
+      <static>true</static>
+      <pose>2.35 0 0.001 0 0 0</pose>
+      <link name="marker">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>.60 .60 .002</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.75 1 .75 1</ambient>
+            <diffuse>.75 1 .75 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="blue_cube">
+      <static>false</static>
+      <pose>-1.6 -1.2 0.09 0 0 0</pose>
+      <link name="body">
+        <inertial>
+          <mass>0.15</mass>
+          <inertia>
+            <ixx>0.001215</ixx>
+            <iyy>0.001215</iyy>
+            <izz>0.001215</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.18 0.18 0.18</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.18 0.18 0.18</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>
+            <diffuse>0 0 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="blue_target">
+      <static>true</static>
+      <pose>2.35 -1.2 0.001 0 0 0</pose>
+      <link name="marker">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>.60 .60 .002</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.75 .75 1 1</ambient>
+            <diffuse>.75 .75 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

@@ -1,0 +1,104 @@
+{
+  "state": "FAILED",
+  "delivered": [],
+  "failures": [
+    {
+      "color": "blue",
+      "reason": "No stable camera detection for blue"
+    }
+  ],
+  "elapsed_s": 55.05,
+  "events": [
+    {
+      "state": "WAITING_FOR_NAV2",
+      "color": null,
+      "elapsed_s": 0
+    },
+    {
+      "state": "MISSION_STARTED",
+      "color": null,
+      "elapsed_s": 0.0
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 0.69,
+      "goal": [
+        0.15,
+        0.2,
+        0.0
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 6.34
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 8.23,
+      "goal": [
+        0.544,
+        -0.07,
+        0.813
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 14.18
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 16.95,
+      "destination": [
+        1.65,
+        1.1
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "blue",
+      "elapsed_s": 25.63,
+      "cube": [
+        1.671,
+        1.034
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 28.53,
+      "goal": [
+        1.233,
+        1.002,
+        0.195
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 33.98
+    },
+    {
+      "state": "REALIGN",
+      "color": "blue",
+      "elapsed_s": 36.18,
+      "attempt": 1,
+      "yaw_error": 0.792
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 39.02
+    },
+    {
+      "state": "FAILED",
+      "color": "blue",
+      "elapsed_s": 55.05,
+      "reason": "No stable camera detection for blue"
+    }
+  ]
+}

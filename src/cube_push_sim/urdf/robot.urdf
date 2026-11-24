@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<robot name="cube_pusher">
+  <link name="base_footprint" />
+  <link name="base_link">
+    <inertial>
+      <mass value="4" />
+      <inertia ixx="0.043333333333333335" iyy="0.06666666666666668" izz="0.08333333333333333" ixy="0" ixz="0" iyz="0" />
+      <origin xyz="-.05 0 0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size=".4 .3 .2" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size=".4 .3 .2" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint" />
+    <child link="base_link" />
+    <origin xyz="0 0 .15" />
+  </joint>
+  <link name="left_wheel">
+    <inertial>
+      <mass value=".2" />
+      <inertia ixx=".0002" ixy="0" ixz="0" iyy=".00025" iyz="0" izz=".0002" />
+    </inertial>
+    <visual>
+      <origin rpy="1.5707963 0 0" />
+      <geometry>
+        <cylinder radius=".05" length=".025" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="1.5707963 0 0" />
+      <geometry>
+        <cylinder radius=".05" length=".002" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_wheel_joint" type="continuous">
+    <parent link="base_link" />
+    <child link="left_wheel" />
+    <origin xyz="0 0.15 -.10" />
+    <axis xyz="0 1 0" />
+    <limit effort="10" velocity="16" />
+  </joint>
+  <link name="right_wheel">
+    <inertial>
+      <mass value=".2" />
+      <inertia ixx=".0002" ixy="0" ixz="0" iyy=".00025" iyz="0" izz=".0002" />
+    </inertial>
+    <visual>
+      <origin rpy="1.5707963 0 0" />
+      <geometry>
+        <cylinder radius=".05" length=".025" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="1.5707963 0 0" />
+      <geometry>
+        <cylinder radius=".05" length=".002" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_wheel_joint" type="continuous">
+    <parent link="base_link" />
+    <child link="right_wheel" />
+    <origin xyz="0 -0.15 -.10" />
+    <axis xyz="0 1 0" />
+    <limit effort="10" velocity="16" />
+  </joint>
+  <link name="caster">
+    <inertial>
+      <mass value="0.05" />
+      <inertia ixx="1.3333333333333335e-05" iyy="1.3333333333333335e-05" izz="1.3333333333333335e-05" ixy="0" ixz="0" iyz="0" />
+      <origin xyz="0 0 0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <sphere radius=".025" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <sphere radius=".025" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="caster_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="caster" />
+    <origin xyz="-.15 0 -.125" />
+  </joint>
+  <gazebo reference="caster">
+    <mu1>0.001</mu1>
+    <mu2>0.001</mu2>
+  </gazebo>
+  <link name="pusher">
+    <inertial>
+      <mass value="0.1" />
+      <inertia ixx="0.0007066666666666667" iyy="6.666666666666667e-05" izz="0.0006666666666666669" ixy="0" ixz="0" iyz="0" />
+      <origin xyz="0 0 0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size=".04 .28 .08" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size=".04 .28 .08" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="pusher_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="pusher" />
+    <origin xyz=".22 0 -.10" />
+  </joint>
+  <link name="lidar_link" />
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="lidar_link" />
+    <origin xyz="0 0 .10" />
+  </joint>
+  <link name="camera_link" />
+  <joint name="camera_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="camera_link" />
+    <origin xyz=".18 0 .35" rpy="0 .95 0" />
+  </joint>
+  <gazebo reference="lidar_link">
+    <sensor name="lidar" type="gpu_lidar">
+      <topic>scan</topic>
+      <gz_frame_id>lidar_link</gz_frame_id>
+      <update_rate>10</update_rate>
+      <lidar>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <min_angle>-3.14159265</min_angle>
+            <max_angle>3.14159265</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>.08</min>
+          <max>10</max>
+          <resolution>.01</resolution>
+        </range>
+      </lidar>
+    </sensor>
+  </gazebo>
+  <gazebo reference="camera_link">
+    <sensor name="camera" type="camera">
+      <topic>camera</topic>
+      <update_rate>10</update_rate>
+      <camera>
+        <horizontal_fov>1.57079632679</horizontal_fov>
+        <image>
+          <width>320</width>
+          <height>240</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>.03</near>
+          <far>10</far>
+        </clip>
+      </camera>
+      <gz_frame_id>camera_optical_frame</gz_frame_id>
+    </sensor>
+  </gazebo>
+  <gazebo>
+    <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+      <left_joint>left_wheel_joint</left_joint>
+      <right_joint>right_wheel_joint</right_joint>
+      <wheel_separation>.30</wheel_separation>
+      <wheel_radius>.05</wheel_radius>
+      <topic>cmd_vel</topic>
+      <odom_topic>odom</odom_topic>
+      <tf_topic>tf</tf_topic>
+      <frame_id>odom</frame_id>
+      <child_frame_id>base_footprint</child_frame_id>
+      <max_linear_velocity>.8</max_linear_velocity>
+      <max_angular_velocity>1.5</max_angular_velocity>
+      <max_linear_acceleration>.5</max_linear_acceleration>
+      <min_linear_acceleration>-.5</min_linear_acceleration>
+      <max_angular_acceleration>1.0</max_angular_acceleration>
+      <min_angular_acceleration>-1.0</min_angular_acceleration>
+      <min_linear_velocity>-.8</min_linear_velocity>
+      <min_angular_velocity>-1.5</min_angular_velocity>
+    </plugin>
+    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+      <topic>joint_states</topic>
+      <update_rate>20</update_rate>
+    </plugin>
+  </gazebo>
+  <link name="camera_optical_frame" />
+  <joint name="camera_optical_joint" type="fixed">
+    <parent link="camera_link" />
+    <child link="camera_optical_frame" />
+    <origin xyz="0 0 0" rpy="-1.57079632679 0 -1.57079632679" />
+  </joint>
+  <link name="pusher_guide_left">
+    <inertial>
+      <mass value=".03" />
+      <inertia ixx=".00003" iyy=".00006" izz=".00006" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <geometry>
+        <box size=".14 .02 .08" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size=".14 .02 .08" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="guide_left_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="pusher_guide_left" />
+    <origin xyz=".29 0.14 -.095" />
+  </joint>
+  <link name="pusher_guide_right">
+    <inertial>
+      <mass value=".03" />
+      <inertia ixx=".00003" iyy=".00006" izz=".00006" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <geometry>
+        <box size=".14 .02 .08" />
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size=".14 .02 .08" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="guide_right_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="pusher_guide_right" />
+    <origin xyz=".29 -0.14 -.095" />
+  </joint>
+</robot>

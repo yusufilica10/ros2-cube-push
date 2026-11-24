@@ -1,0 +1,58 @@
+{"state": "WAITING_FOR_NAV2", "active_color": null, "elapsed_s": 0, "sim_elapsed_s": 0, "delivered": [], "failures": []}
+std_srvs.srv.Trigger_Response(success=True, message='Mission requested')
+{"state": "MISSION_STARTED", "active_color": null, "elapsed_s": 0.0, "sim_elapsed_s": 0.0, "delivered": [], "failures": []}
+{"state": "NAVIGATE", "active_color": "green", "elapsed_s": 0.6, "sim_elapsed_s": 0.5, "delivered": [], "failures": []}
+{"state": "ACQUIRE", "active_color": "green", "elapsed_s": 17.4, "sim_elapsed_s": 12.2, "delivered": [], "failures": []}
+{"state": "NAVIGATE", "active_color": "green", "elapsed_s": 21.6, "sim_elapsed_s": 15.0, "delivered": [], "failures": []}
+{"state": "ACQUIRE", "active_color": "green", "elapsed_s": 29.6, "sim_elapsed_s": 19.8, "delivered": [], "failures": []}
+{"state": "PUSH", "active_color": "green", "elapsed_s": 32.5, "sim_elapsed_s": 21.7, "delivered": [], "failures": []}
+{"state": "PUSH_REACHED", "active_color": "green", "elapsed_s": 48.1, "sim_elapsed_s": 34.5, "delivered": [], "failures": []}
+{"state": "NAVIGATE", "active_color": "green", "elapsed_s": 51.3, "sim_elapsed_s": 37.3, "delivered": [], "failures": []}
+{"state": "FAILED", "active_color": "green", "elapsed_s": 156.4, "sim_elapsed_s": 49.7, "delivered": [], "failures": [{"color": "green", "reason": "Action response timed out"}]}
+{
+  "delivered_count": 0,
+  "cubes": {
+    "red": {
+      "delivered": false,
+      "center": {
+        "x": -1.6,
+        "y": 1.2,
+        "z": 0.08999987733572834
+      },
+      "orientation": {
+        "x": -1.2011734088483236e-18,
+        "y": 4.362835718455072e-18,
+        "z": 1.1726455251764688e-18,
+        "w": 1
+      }
+    },
+    "green": {
+      "delivered": false,
+      "center": {
+        "x": 0.7479248637881666,
+        "y": -0.04658358741576305,
+        "z": 0.08999997228837647
+      },
+      "orientation": {
+        "x": 9.13994943650505e-08,
+        "y": 1.0065555869372194e-07,
+        "z": -0.043609184614520145,
+        "w": 0.9990486669913725
+      }
+    },
+    "blue": {
+      "delivered": false,
+      "center": {
+        "x": -1.6,
+        "y": -1.2,
+        "z": 0.08999987733572834
+      },
+      "orientation": {
+        "x": -1.094506366581127e-18,
+        "y": 3.520175446217641e-18,
+        "z": 1.322258934440202e-18,
+        "w": 1
+      }
+    }
+  }
+}

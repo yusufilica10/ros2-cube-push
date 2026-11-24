@@ -1,0 +1,23 @@
+std_srvs.srv.Trigger_Response(success=True, message='Mission requested')
+{"state": "WAITING_FOR_NAV2", "active_color": null, "elapsed_s": 0, "sim_elapsed_s": 0, "delivered": [], "failures": []}
+{"state": "MISSION_STARTED", "active_color": null, "elapsed_s": 0.0, "sim_elapsed_s": 0.0, "delivered": [], "failures": []}
+{"state": "MISSION_STARTED", "active_color": "green", "elapsed_s": 0.4, "sim_elapsed_s": 0.2, "delivered": [], "failures": []}
+{"state": "NAVIGATE", "active_color": "green", "elapsed_s": 0.6, "sim_elapsed_s": 0.3, "delivered": [], "failures": []}
+{"state": "ACQUIRE", "active_color": "green", "elapsed_s": 21.2, "sim_elapsed_s": 13.3, "delivered": [], "failures": []}
+{"state": "NAVIGATE", "active_color": "green", "elapsed_s": 24.3, "sim_elapsed_s": 15.5, "delivered": [], "failures": []}
+{"state": "ACQUIRE", "active_color": "green", "elapsed_s": 28.1, "sim_elapsed_s": 18.1, "delivered": [], "failures": []}
+{"state": "PUSH", "active_color": "green", "elapsed_s": 30.5, "sim_elapsed_s": 19.8, "delivered": [], "failures": []}
+{"state": "PUSH_REACHED", "active_color": "green", "elapsed_s": 49.6, "sim_elapsed_s": 32.8, "delivered": [], "failures": []}
+{"state": "NAVIGATE", "active_color": "green", "elapsed_s": 54.7, "sim_elapsed_s": 36.1, "delivered": [], "failures": []}
+{"state": "ACQUIRE", "active_color": "green", "elapsed_s": 67.0, "sim_elapsed_s": 43.4, "delivered": [], "failures": []}
+{"state": "PUSH", "active_color": "green", "elapsed_s": 71.1, "sim_elapsed_s": 46.0, "delivered": [], "failures": []}
+{"state": "PUSH_REACHED", "active_color": "green", "elapsed_s": 88.7, "sim_elapsed_s": 55.7, "delivered": [], "failures": []}
+{"state": "NAVIGATE", "active_color": "green", "elapsed_s": 92.8, "sim_elapsed_s": 58.2, "delivered": [], "failures": []}
+{"state": "ACQUIRE", "active_color": "green", "elapsed_s": 112.8, "sim_elapsed_s": 70.2, "delivered": [], "failures": []}
+{"state": "PUSH", "active_color": "green", "elapsed_s": 115.8, "sim_elapsed_s": 72.2, "delivered": [], "failures": []}
+{"state": "PUSH_REACHED", "active_color": "green", "elapsed_s": 136.3, "sim_elapsed_s": 85.5, "delivered": [], "failures": []}
+{"state": "VERIFY", "active_color": "green", "elapsed_s": 139.3, "sim_elapsed_s": 87.6, "delivered": [], "failures": []}
+{"state": "DELIVERY_CONFIRMED", "active_color": "green", "elapsed_s": 140.4, "sim_elapsed_s": 88.4, "delivered": [], "failures": []}
+{"state": "DELIVERED", "active_color": "green", "elapsed_s": 140.4, "sim_elapsed_s": 88.4, "delivered": ["green"], "failures": []}
+{"state": "NAVIGATE", "active_color": "green", "elapsed_s": 141.0, "sim_elapsed_s": 88.8, "delivered": ["green"], "failures": []}
+{"state": "NAVIGATE", "active_color": "blue", "elapsed_s": 176.2, "sim_elapsed_s": 112.1, "delivered": ["green"], "failures": []}

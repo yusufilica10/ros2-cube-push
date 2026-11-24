@@ -1,0 +1,181 @@
+{
+  "state": "FAILED",
+  "delivered": [],
+  "failures": [
+    {
+      "color": "blue",
+      "reason": "Camera could not confirm cube fully inside matching visible target"
+    }
+  ],
+  "elapsed_s": 98.77,
+  "events": [
+    {
+      "state": "WAITING_FOR_NAV2",
+      "color": null,
+      "elapsed_s": 0
+    },
+    {
+      "state": "MISSION_STARTED",
+      "color": null,
+      "elapsed_s": 0.0
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 0.62,
+      "goal": [
+        0.15,
+        0.2,
+        0.0
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 6.65
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 8.86,
+      "goal": [
+        0.546,
+        -0.069,
+        0.814
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 14.91
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 16.61,
+      "destination": [
+        1.65,
+        1.1
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "blue",
+      "elapsed_s": 25.06,
+      "cube": [
+        1.674,
+        1.033
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 28.02,
+      "goal": [
+        1.248,
+        0.97,
+        0.213
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 33.26
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 34.34,
+      "destination": [
+        3.0,
+        1.35
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "blue",
+      "elapsed_s": 45.99,
+      "cube": [
+        3.035,
+        1.364
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 48.9,
+      "goal": [
+        2.742,
+        1.521,
+        -0.366
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 54.14
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 55.33,
+      "destination": [
+        4.1,
+        1.0
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "blue",
+      "elapsed_s": 65.72,
+      "cube": [
+        4.098,
+        1.009
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 68.69,
+      "goal": [
+        3.928,
+        1.298,
+        -0.929
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 74.33
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 76.25,
+      "destination": [
+        4.75,
+        0.2
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "blue",
+      "elapsed_s": 86.3,
+      "cube": [
+        4.732,
+        0.226
+      ]
+    },
+    {
+      "state": "VERIFY",
+      "color": "blue",
+      "elapsed_s": 88.72
+    },
+    {
+      "state": "FAILED",
+      "color": "blue",
+      "elapsed_s": 98.76,
+      "reason": "Camera could not confirm cube fully inside matching visible target"
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "state": "FAILED",
+  "delivered": [],
+  "failures": [
+    {
+      "color": "blue",
+      "reason": "Camera could not confirm full containment in target"
+    }
+  ],
+  "elapsed_s": 95.09,
+  "events": [
+    {
+      "state": "WAITING_FOR_NAV2",
+      "color": null,
+      "elapsed_s": 0
+    },
+    {
+      "state": "MISSION_STARTED",
+      "color": null,
+      "elapsed_s": 0.0
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 0.61,
+      "goal": [
+        0.15,
+        0.2,
+        0.0
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 6.03
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 7.93,
+      "goal": [
+        0.539,
+        -0.072,
+        0.812
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 13.78
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 14.96,
+      "destination": [
+        1.65,
+        1.1
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "blue",
+      "elapsed_s": 25.26,
+      "cube": [
+        1.648,
+        1.17
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 28.22,
+      "goal": [
+        1.294,
+        1.11,
+        0.14
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 33.87
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 35.78,
+      "destination": [
+        3.0,
+        1.35
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "blue",
+      "elapsed_s": 45.18,
+      "cube": [
+        2.968,
+        1.341
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 48.09,
+      "goal": [
+        2.661,
+        1.485,
+        -0.325
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 53.12
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 54.29,
+      "destination": [
+        4.1,
+        1.0
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "blue",
+      "elapsed_s": 65.14,
+      "cube": [
+        4.055,
+        1.019
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 68.1,
+      "goal": [
+        3.882,
+        1.297,
+        -0.901
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 74.02
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 75.43,
+      "destination": [
+        4.75,
+        0.2
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "blue",
+      "elapsed_s": 84.72,
+      "cube": [
+        4.79,
+        0.236
+      ]
+    },
+    {
+      "state": "VERIFY",
+      "color": "blue",
+      "elapsed_s": 87.07
+    },
+    {
+      "state": "FAILED",
+      "color": "blue",
+      "elapsed_s": 95.08,
+      "reason": "Camera could not confirm full containment in target"
+    }
+  ]
+}

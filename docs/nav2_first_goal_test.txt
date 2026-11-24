@@ -1,0 +1,5 @@
+Waiting for Nav2 action...
+AMCL start: x=0.000, y=0.000
+Goal accepted: True
+RESULT: nav2_msgs.action.NavigateToPose_GetResult_Response(status=4, result=nav2_msgs.action.NavigateToPose_Result(error_code=0, error_msg=''))
+AMCL end: x=0.478, y=-0.008

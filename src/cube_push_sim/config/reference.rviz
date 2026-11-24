@@ -1,0 +1,30 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+Visualization Manager:
+  Class: ""
+  Global Options:
+    Fixed Frame: arena_reference
+    Background Color: 90; 90; 90
+  Displays:
+    - Class: rviz_default_plugins/Map
+      Name: Plan tabanli referans - SLAM degil
+      Enabled: true
+      Topic:
+        Value: /reference/map
+        Durability Policy: Transient Local
+        Reliability Policy: Reliable
+        History Policy: Keep Last
+        Depth: 1
+      Alpha: 1
+  Views:
+    Current:
+      Class: rviz_default_plugins/TopDownOrtho
+      Name: Arena
+      Scale: 120
+      Target Frame: arena_reference
+      X: 0
+      Y: 0
+Window Geometry:
+  Width: 1000
+  Height: 750

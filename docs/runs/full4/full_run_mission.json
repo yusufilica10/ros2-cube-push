@@ -1,0 +1,101 @@
+{
+  "state": "FAILED",
+  "delivered": [],
+  "failures": [
+    {
+      "color": "blue",
+      "reason": "Camera/TF lost during push; stopped"
+    }
+  ],
+  "elapsed_s": 46.12,
+  "events": [
+    {
+      "state": "WAITING_FOR_NAV2",
+      "color": null,
+      "elapsed_s": 0
+    },
+    {
+      "state": "MISSION_STARTED",
+      "color": null,
+      "elapsed_s": 0.0
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 0.62,
+      "goal": [
+        0.15,
+        0.2,
+        0.0
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 7.25
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 9.67,
+      "goal": [
+        0.548,
+        -0.072,
+        0.816
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 15.68
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 16.92,
+      "destination": [
+        1.65,
+        1.1
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "blue",
+      "elapsed_s": 27.19,
+      "cube": [
+        1.693,
+        1.114
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 30.15,
+      "goal": [
+        1.241,
+        1.084,
+        0.15
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 36.4
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 38.56,
+      "destination": [
+        3.0,
+        1.35
+      ]
+    },
+    {
+      "state": "FAILED",
+      "color": "blue",
+      "elapsed_s": 46.12,
+      "reason": "Camera/TF lost during push; stopped"
+    }
+  ]
+}

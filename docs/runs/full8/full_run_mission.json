@@ -1,0 +1,190 @@
+{
+  "state": "FAILED",
+  "delivered": [],
+  "failures": [
+    {
+      "color": "blue",
+      "reason": "No stable camera detection for blue"
+    }
+  ],
+  "elapsed_s": 127.05,
+  "events": [
+    {
+      "state": "WAITING_FOR_NAV2",
+      "color": null,
+      "elapsed_s": 0
+    },
+    {
+      "state": "MISSION_STARTED",
+      "color": null,
+      "elapsed_s": 0.0
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 0.62,
+      "goal": [
+        0.15,
+        0.2,
+        0.0
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 6.17
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 8.17,
+      "goal": [
+        0.548,
+        -0.075,
+        0.818
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 13.45
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 15.24,
+      "destination": [
+        1.65,
+        1.1
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "blue",
+      "elapsed_s": 25.31,
+      "cube": [
+        1.672,
+        1.045
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 28.21,
+      "goal": [
+        1.219,
+        1.024,
+        0.181
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 36.18
+    },
+    {
+      "state": "REALIGN",
+      "color": "blue",
+      "elapsed_s": 38.55,
+      "attempt": 1,
+      "yaw_error": 0.811
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 42.06,
+      "goal": [
+        0.986,
+        0.497,
+        0.401
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 49.86,
+      "goal": [
+        1.336,
+        0.645,
+        0.401
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 56.14
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 57.62,
+      "destination": [
+        3.0,
+        1.35
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "blue",
+      "elapsed_s": 67.9,
+      "cube": [
+        3.04,
+        1.331
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 70.91,
+      "goal": [
+        2.716,
+        1.507,
+        -0.351
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 78.44
+    },
+    {
+      "state": "PUSH",
+      "color": "blue",
+      "elapsed_s": 81.31,
+      "destination": [
+        4.1,
+        1.0
+      ]
+    },
+    {
+      "state": "PUSH_REACHED",
+      "color": "blue",
+      "elapsed_s": 89.87,
+      "cube": [
+        4.044,
+        0.987
+      ]
+    },
+    {
+      "state": "NAVIGATE",
+      "color": "blue",
+      "elapsed_s": 92.77,
+      "goal": [
+        3.826,
+        1.16,
+        -0.804
+      ]
+    },
+    {
+      "state": "ACQUIRE",
+      "color": "blue",
+      "elapsed_s": 111.0
+    },
+    {
+      "state": "FAILED",
+      "color": "blue",
+      "elapsed_s": 127.05,
+      "reason": "No stable camera detection for blue"
+    }
+  ]
+}
